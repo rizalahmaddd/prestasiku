@@ -1,0 +1,3496 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Kenzo Al-Fatih">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Portofolio Prestasi Kenzo Al-Fatih">
+  <meta property="og:description" content="Rekam jejak pendidikan dan prestasi olimpiade sains, robotika, dan riset Kenzo Al-Fatih.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1747936536833-d397b9768541?q=80&w=1200&h=630&auto=format&fit=crop&crop=faces">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E">
+  <title>Portofolio & Rekam Jejak Prestasi - Kenzo Al-Fatih</title>
+  <meta name="description" content="Dokumentasi resmi perjalanan pendidikan, prestasi lomba olimpiade sains, robotika, dan riset inovasi Kenzo Al-Fatih.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans (Clean Modern) & Newsreader (Prestigious Editorial) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS & JS (peta gratis berbasis OpenStreetMap, tanpa API key) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@1.54.0/dist/umd/lucide.min.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Newsreader"', 'serif'],
+          },
+          colors: {
+            slate: {
+              850: '#151f32',
+              950: '#0a0f1d',
+            },
+            royal: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#172554',
+            },
+            amber: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              600: '#d97706',
+              700: '#b45309',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    document.documentElement.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-anim');
+    }
+  </script>
+
+  <style>
+    /* Clean Editorial Styling */
+    body {
+      background-color: #fafbfc;
+      color: #1e293b;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle Paper Grid */
+    .bg-paper-grid {
+      background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+    }
+
+    /* Clean Card Hover */
+    .clean-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .clean-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      transform: translateY(-2px);
+    }
+
+    /* Print / Formal Certificate Border */
+    .cert-frame {
+      border: 8px double #cbd5e1;
+      outline: 1px solid #e2e8f0;
+      outline-offset: -12px;
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .scrollbar-none {
+      scrollbar-width: none;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Motion tokens & base behaviour */
+    :root {
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    html {
+      scrollbar-gutter: stable;
+    }
+    html.modal-lock {
+      overflow: hidden;
+    }
+    section[id] {
+      scroll-margin-top: 4.5rem;
+    }
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+    }
+    :focus-visible {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 3px;
+    }
+    input:focus, textarea:focus {
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
+    }
+    button:active, a[class*="rounded-xl"]:active {
+      scale: 0.97;
+    }
+
+    /* Header */
+    #nav-inner {
+      transition: height 0.35s var(--ease-out);
+    }
+    #site-header.is-scrolled {
+      box-shadow: 0 10px 30px -18px rgba(15, 23, 42, 0.35);
+    }
+    @media (min-width: 1024px) {
+      #site-header.is-scrolled #nav-inner {
+        height: 4rem;
+      }
+    }
+    #scroll-progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      background: #1e40af;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    /* Sliding indicator shared by the nav and the category tabs */
+    .slide-pill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .slide-pill.is-ready {
+      transition: transform 0.45s var(--ease-out), width 0.45s var(--ease-out), opacity 0.2s;
+    }
+    #nav-pill {
+      background: #f1f5f9;
+      border-radius: 0.625rem;
+    }
+    #tab-pill {
+      background: #0f172a;
+      border-radius: 0.75rem;
+    }
+    .nav-link {
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      line-height: 1.25rem !important;
+      flex-shrink: 0 !important;
+    }
+    .nav-link.is-active {
+      color: #0f172a;
+      font-weight: 600;
+    }
+    .category-btn.active, .category-btn.active:hover {
+      background: #0f172a;
+      color: #ffffff;
+    }
+    .js .category-btn.active, .js .category-btn.active:hover {
+      background: transparent;
+    }
+
+    /* Roadmap: one rail with numbered nodes, sideways on desktop and top-down below that */
+    .roadmap-step {
+      position: relative;
+      padding: 0 0 1.75rem 3.5rem;
+    }
+    .roadmap-step:last-child {
+      padding-bottom: 0;
+    }
+    .roadmap-step::before {
+      content: '';
+      position: absolute;
+      left: calc(1.25rem - 1px);
+      top: 2.5rem;
+      bottom: 0;
+      border-left: 2px solid #e2e8f0;
+    }
+    .roadmap-step:last-child::before {
+      display: none;
+    }
+    .roadmap-node {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      color: #334155;
+      font-size: 0.75rem;
+      font-weight: 700;
+      transition: border-color 0.2s, color 0.2s, transform 0.35s var(--ease-spring);
+    }
+    .roadmap-step button:hover .roadmap-node {
+      border-color: #1d4ed8;
+      color: #1e40af;
+      transform: scale(1.08);
+    }
+    .roadmap-tag {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.375rem;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.6875rem;
+      font-weight: 600;
+    }
+    .roadmap-step.is-peak .roadmap-node {
+      background: #b45309;
+      border-color: #b45309;
+      color: #ffffff;
+    }
+    .roadmap-step.is-peak .roadmap-tag {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .roadmap-step.is-peak::before,
+    .roadmap-step.is-next .roadmap-node {
+      border-style: dashed;
+    }
+    .roadmap-step.is-next .roadmap-node {
+      border-color: #059669;
+      color: #047857;
+    }
+    .roadmap-step.is-next .roadmap-tag {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    @media (min-width: 1024px) {
+      .roadmap {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+      .roadmap-step {
+        padding: 3.5rem 1.5rem 0 0;
+      }
+      .roadmap-step:last-child {
+        padding-right: 0;
+      }
+      .roadmap-step::before {
+        left: 2.5rem;
+        right: 0;
+        top: calc(1.25rem - 1px);
+        bottom: auto;
+        border-left: 0;
+        border-top: 2px solid #e2e8f0;
+      }
+      .roadmap-step.is-peak::before {
+        border-top-style: dashed;
+      }
+    }
+
+    /* Mobile app shell: app bar actions, bottom tab bar, "Lainnya" sheet */
+    .appbar-btn {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      color: #334155;
+      transition: background-color 0.15s;
+    }
+    .appbar-btn:active {
+      background: #f1f5f9;
+    }
+    .tabbar {
+      display: none;
+    }
+    @media (max-width: 1023.98px) {
+      :root {
+        --tabbar-h: calc(4rem + env(safe-area-inset-bottom, 0px));
+      }
+      body {
+        padding-bottom: var(--tabbar-h);
+      }
+      /* Less than the app bar height on purpose: sections open with 5rem of padding, so a tab lands on the heading. */
+      section[id] {
+        scroll-margin-top: calc(1rem + env(safe-area-inset-top, 0px));
+      }
+      #panel-galeri {
+        scroll-margin-top: calc(4.5rem + env(safe-area-inset-top, 0px));
+      }
+      #site-header {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      .tabbar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 30;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        height: var(--tabbar-h);
+        padding: 0 0.25rem env(safe-area-inset-bottom, 0px);
+        background: rgba(255, 255, 255, 0.94);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        border-top: 1px solid #e2e8f0;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        transition: transform 0.25s var(--ease-out);
+      }
+      #to-top {
+        right: 1rem;
+        bottom: calc(var(--tabbar-h) + 0.75rem);
+      }
+      .toast {
+        bottom: calc(var(--tabbar-h) + 0.75rem);
+      }
+    }
+    /* Small text links keep their look; the hit area grows to a thumb-sized target. */
+    .tap {
+      position: relative;
+    }
+    .tap::after {
+      content: '';
+      position: absolute;
+      inset: -0.875rem -0.5rem;
+    }
+    @media (pointer: coarse) {
+      .category-btn,
+      .ach-view-btn,
+      .showcase-tab-btn,
+      .gal-filter-btn {
+        min-height: 2.75rem;
+      }
+    }
+    /* A fixed bar would otherwise ride on top of the on-screen keyboard. */
+    @media (pointer: coarse) {
+      .kb-open .tabbar {
+        transform: translateY(100%);
+      }
+    }
+    .tab-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.125rem;
+      min-width: 0;
+      color: #64748b;
+      font-size: 0.6875rem;
+      line-height: 1rem;
+      font-weight: 600;
+    }
+    .tab-btn:active {
+      scale: 1;
+    }
+    .tab-icon {
+      position: relative;
+      width: 3.5rem;
+      height: 1.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s var(--ease-out);
+    }
+    .tab-icon::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 9999px;
+      background: #dbeafe;
+      opacity: 0;
+      transform: scaleX(0.55);
+      transition: opacity 0.2s, transform 0.35s var(--ease-out);
+    }
+    .tab-btn:active .tab-icon {
+      transform: scale(0.9);
+    }
+    .tab-btn.is-active {
+      color: #1e40af;
+      font-weight: 700;
+    }
+    .tab-btn.is-active .tab-icon::before {
+      opacity: 1;
+      transform: none;
+    }
+    .modal.sheet {
+      overscroll-behavior: contain;
+    }
+    .sheet-panel {
+      transform: translateY(100%);
+      transition: transform 0.24s cubic-bezier(0.4, 0, 1, 1);
+      padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+      touch-action: none;
+    }
+    .modal.is-open .sheet-panel {
+      transform: none;
+      transition: transform 0.42s var(--ease-out);
+    }
+    .sheet-panel:focus {
+      outline: none;
+    }
+    .sheet-grip {
+      width: 2.25rem;
+      height: 0.25rem;
+      margin: 0.25rem auto 0.5rem;
+      border-radius: 9999px;
+      background: #cbd5e1;
+    }
+    .sheet-row {
+      width: 100%;
+      min-height: 3.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.5rem;
+      border-radius: 0.875rem;
+      text-align: left;
+      color: #0f172a;
+    }
+    .sheet-row:active {
+      background: #f1f5f9;
+      scale: 1;
+    }
+    .sheet-row > .sheet-ico {
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      background: #f1f5f9;
+      color: #334155;
+    }
+
+    /* Hero */
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+      background-image: radial-gradient(#64748b 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+      -webkit-mask-image: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), #000, transparent 70%);
+      mask-image: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), #000, transparent 70%);
+    }
+    .hero-dots.is-on {
+      opacity: 0.7;
+    }
+    /* clip-path instead of overflow:hidden so the word masks keep their text baseline */
+    .w {
+      display: inline-block;
+      clip-path: inset(-0.1em -0.12em -0.2em -0.06em);
+    }
+    .w > span {
+      display: inline-block;
+    }
+    .hero-mark {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .hero-stroke {
+      position: absolute;
+      left: 0;
+      bottom: -0.08em;
+      width: 100%;
+      height: 0.2em;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .hero-stroke path {
+      fill: none;
+      stroke: #d97706;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+    }
+    #hero-card {
+      transition: transform 0.6s var(--ease-out);
+      will-change: transform;
+    }
+    #hero-card.is-tilting {
+      transition-duration: 0.12s;
+    }
+    .glare {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+      background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.4), transparent 55%);
+    }
+    .is-tilting .glare {
+      opacity: 1;
+    }
+
+    /* Entrance choreography. fill-mode stays "backwards" so finished animations never pin a transform. */
+    .js-anim [data-hero] {
+      animation: rise 0.9s var(--ease-out) backwards;
+      animation-delay: calc(var(--h, 0) * 90ms + 80ms);
+    }
+    .js-anim #hero-card {
+      animation: hero-card 1.1s var(--ease-out) 0.25s backwards;
+    }
+    .js-anim .w > span {
+      animation: word-up 0.95s var(--ease-out) backwards;
+      animation-delay: calc(var(--w, 0) * 70ms + 120ms);
+    }
+    .js-anim .hero-stroke path {
+      animation: draw 0.9s var(--ease-out) 0.95s backwards;
+    }
+    .js-anim [data-reveal]:not(.is-in),
+    .js-anim [data-stagger] > :not(.is-in) {
+      opacity: 0;
+    }
+    .js-anim #no-results:not(.hidden) {
+      animation: rise 0.4s var(--ease-out) backwards;
+    }
+    .js-anim .cert-seal {
+      animation: stamp 0.7s var(--ease-out) 0.2s backwards;
+    }
+    .js-anim .cert-frame > :not(.cert-seal) {
+      animation: rise 0.6s var(--ease-out) backwards;
+      animation-delay: calc(var(--n, 0) * 70ms + 280ms);
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+    }
+    @keyframes hero-card {
+      from { opacity: 0; transform: translateY(36px) rotate(2.5deg) scale(0.97); }
+    }
+    @keyframes word-up {
+      from { transform: translateY(115%); }
+    }
+    @keyframes draw {
+      from { stroke-dashoffset: 1; }
+    }
+    @keyframes stamp {
+      0% { opacity: 0; transform: scale(2.4) rotate(-22deg); }
+      60% { opacity: 1; transform: scale(0.92) rotate(3deg); }
+      100% { transform: none; }
+    }
+    @keyframes medal {
+      30% { transform: rotate(-14deg) scale(1.25); }
+      60% { transform: rotate(10deg) scale(1.1); }
+    }
+    @keyframes shimmer {
+      to { background-position: -200% 0; }
+    }
+
+    /* Cards */
+    .spot {
+      position: relative;
+    }
+    .spot::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(29, 78, 216, 0.07), transparent 60%);
+    }
+    .spot:hover::before {
+      opacity: 1;
+    }
+    .achievement-card:hover .ach-ico {
+      animation: medal 0.7s var(--ease-out);
+    }
+    .achievement-card .ach-thumb img {
+      transition: transform 0.6s var(--ease-out);
+    }
+    .achievement-card:hover .ach-thumb img {
+      transform: scale(1.05);
+    }
+    .tally-btn:hover {
+      border-color: #cbd5e1;
+    }
+    .tally-btn[aria-pressed="true"] {
+      border-color: #0f172a;
+      box-shadow: 0 0 0 1px #0f172a;
+    }
+    .ach-view-btn[aria-pressed="true"] {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+    }
+    .ach-tl-list {
+      margin-left: 1rem;
+      padding: 0.25rem 0 2rem 1.5rem;
+      border-left: 2px solid #e2e8f0;
+    }
+    .ach-tl-year:last-child .ach-tl-list {
+      padding-bottom: 0;
+    }
+    .ach-tl-row {
+      position: relative;
+    }
+    .ach-tl-row::before {
+      content: '';
+      position: absolute;
+      left: calc(-1.5rem - 7px);
+      top: 50%;
+      width: 12px;
+      height: 12px;
+      margin-top: -6px;
+      border-radius: 9999px;
+      background: #ffffff;
+      border: 2.5px solid #1d4ed8;
+    }
+    /* Phones swipe through the cards sideways instead of scrolling past nine stacked ones. */
+    @media (max-width: 767.98px) {
+      #achievements-grid {
+        display: flex;
+        gap: 0.875rem;
+        margin: 0 -1rem;
+        padding: 0.25rem 1rem 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+      #achievements-grid::-webkit-scrollbar {
+        display: none;
+      }
+      #achievements-grid > .achievement-card {
+        flex: 0 0 84%;
+        scroll-snap-align: center;
+      }
+    }
+    #tentang .clean-card > div:first-child {
+      transition: transform 0.45s var(--ease-spring);
+    }
+    #tentang .clean-card:hover > div:first-child {
+      transform: rotate(-8deg) scale(1.12);
+    }
+    [data-nudge] svg {
+      transition: transform 0.3s var(--ease-out);
+    }
+    [data-nudge="x"]:hover svg { transform: translateX(3px); }
+    [data-nudge="y"]:hover svg { transform: translateY(3px); }
+
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -60%;
+      width: 40%;
+      transform: skewX(-20deg);
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    }
+    .btn-shine:hover::after {
+      left: 130%;
+      transition: left 0.7s var(--ease-out);
+    }
+
+    /* Timeline fill follows scroll position via --p */
+    .tl-line {
+      position: relative;
+      overflow: hidden;
+    }
+    .tl-line::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #1e40af;
+      transform: scaleY(var(--p, 0));
+      transform-origin: top;
+    }
+
+    /* Gallery & images */
+    .gallery-item > div:first-child::after {
+      content: 'Perbesar foto';
+      position: absolute;
+      right: 0.75rem;
+      bottom: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.375rem;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s, transform 0.35s var(--ease-out);
+    }
+    .gallery-item:hover > div:first-child::after,
+    .gallery-item:focus-visible > div:first-child::after {
+      opacity: 1;
+      transform: none;
+    }
+    img.lazy-fade {
+      transition-property: opacity, transform;
+      transition-duration: 0.5s;
+    }
+    img.is-loading {
+      opacity: 0;
+    }
+    .shimmer {
+      background-image: linear-gradient(100deg, #f1f5f9 30%, #e2e8f0 50%, #f1f5f9 70%);
+      background-size: 200% 100%;
+      animation: shimmer 1.2s linear infinite;
+    }
+
+    /* Modals, toast, floating controls */
+    .modal {
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .modal.is-open {
+      opacity: 1;
+    }
+    .modal-panel {
+      transform: translateY(18px) scale(0.96);
+      transition: transform 0.25s var(--ease-out);
+    }
+    .modal.is-open .modal-panel {
+      transform: none;
+      transition-duration: 0.45s;
+    }
+    /* The photo panel must not transform: its image frame is measured for the thumbnail morph. */
+    .modal .modal-panel--flat {
+      transform: none;
+    }
+    .photo-nav {
+      opacity: 0.85;
+      transition: opacity 0.2s, transform 0.3s var(--ease-out), background-color 0.15s;
+    }
+    .photo-nav:hover {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+    .confetti {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 60;
+    }
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 1.5rem;
+      z-index: 70;
+      width: max-content;
+      max-width: min(92vw, 26rem);
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      font-weight: 500;
+      box-shadow: 0 16px 32px -12px rgba(15, 23, 42, 0.45);
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, 16px);
+      transition: opacity 0.3s, transform 0.45s var(--ease-out), visibility 0s 0.3s;
+    }
+    .toast.is-on {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+      transition-delay: 0s;
+    }
+    .to-top {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px) scale(0.9);
+      transition: opacity 0.3s, transform 0.4s var(--ease-out), visibility 0s 0.3s, background-color 0.15s;
+    }
+    .to-top.is-on {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition-delay: 0s;
+    }
+    .to-top:hover svg {
+      transform: translateY(-2px);
+    }
+    .to-top svg {
+      transition: transform 0.3s var(--ease-out);
+    }
+    footer a {
+      background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+      transition: background-size 0.35s var(--ease-out), color 0.15s;
+      padding-bottom: 2px;
+    }
+    footer a:hover {
+      background-size: 100% 1px;
+    }
+
+    /* Leaflet Map Custom Styling */
+    #school-map {
+      z-index: 10;
+    }
+    .leaflet-container {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+    .custom-leaflet-marker {
+      background: transparent;
+      border: none;
+    }
+    .pin-marker {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pin-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 9999px;
+      background-color: var(--pin-color, #1d4ed8);
+      border: 2.5px solid #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pin-marker:hover .pin-dot {
+      transform: scale(1.3);
+    }
+    .pin-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      background-color: var(--pin-color, #1d4ed8);
+      opacity: 0.35;
+      animation: pin-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes pin-pulse {
+      0% { transform: scale(0.6); opacity: 0.6; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .leaflet-popup-content-wrapper {
+      border-radius: 1rem !important;
+      padding: 0.25rem !important;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 16px 30px -8px rgba(15, 23, 42, 0.18) !important;
+    }
+    .leaflet-popup-tip {
+      background: #ffffff !important;
+    }
+
+    /* Photo Modal Thumbnail Strip */
+    .thumb-btn {
+      transition: all 0.2s ease;
+      opacity: 0.6;
+    }
+    .thumb-btn.is-active, .thumb-btn:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    .thumb-btn.is-active {
+      box-shadow: 0 0 0 2px #1d4ed8;
+    }
+
+    /* Gallery Filter Tab */
+    .gal-filter-btn.active {
+      background-color: #0f172a;
+      color: #ffffff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="selection:bg-royal-100 selection:text-royal-900">
+
+  <!-- ================= TOP NAVIGATION (CLEAN WHITE) ================= -->
+  <header id="site-header" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
+    <div id="scroll-progress" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="nav-inner" class="h-14 lg:h-20 flex items-center justify-between gap-4 lg:gap-6">
+
+        <!-- Identity / Nameplate -->
+        <a href="#beranda" class="flex items-center gap-3 lg:gap-3.5 group min-w-0 lg:shrink-0">
+          <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-base tracking-tight group-hover:bg-royal-700 group-hover:-rotate-6 group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+            K
+          </div>
+          <span id="appbar-title" class="lg:hidden font-bold text-slate-900 text-base tracking-tight truncate">Kenzo Al-Fatih</span>
+          <div class="hidden lg:block shrink-0">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 text-base tracking-tight group-hover:text-royal-700 transition-colors whitespace-nowrap">Kenzo Al-Fatih</span>
+              <span class="px-2 py-0.5 text-[11px] font-semibold bg-slate-100 text-slate-700 rounded-full border border-slate-200 shrink-0">Kelas IX</span>
+            </div>
+            <p class="text-xs text-slate-500 font-medium whitespace-nowrap">SMP Labschool Rawamangun, Jakarta</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 relative isolate shrink-0">
+          <span id="nav-pill" class="slide-pill" aria-hidden="true"></span>
+          <a href="#beranda" class="nav-link px-3 py-2 text-xs xl:text-sm text-slate-600 hover:text-slate-900 font-medium rounded-lg hover:bg-slate-100/70 transition-colors whitespace-nowrap shrink-0">Beranda</a>
+          <a href="#tentang" class="nav-link px-3 py-2 text-xs xl:text-sm text-slate-600 hover:text-slate-900 font-medium rounded-lg hover:bg-slate-100/70 transition-colors whitespace-nowrap shrink-0">Profil</a>
+          <a href="#pendidikan" class="nav-link px-3 py-2 text-xs xl:text-sm text-slate-600 hover:text-slate-900 font-medium rounded-lg hover:bg-slate-100/70 transition-colors whitespace-nowrap shrink-0">Pendidikan & Kampus</a>
+          <a href="#prestasi" class="nav-link px-3 py-2 text-xs xl:text-sm text-slate-600 hover:text-slate-900 font-medium rounded-lg hover:bg-slate-100/70 transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0">
+            <span>Prestasi & Galeri</span>
+            <span class="px-1.5 py-0.2 text-[10px] bg-royal-100 text-royal-700 font-bold rounded-full">28</span>
+          </a>
+        </nav>
+
+        <!-- CTA Buttons -->
+        <div class="flex items-center gap-0.5 lg:gap-3 shrink-0 -mr-2 lg:mr-0">
+          <button onclick="downloadPortfolioModal()" data-nudge="y" class="hidden lg:inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-xl hover:bg-slate-50 hover:border-slate-400 transition-all shadow-sm shrink-0 whitespace-nowrap">
+            <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-500 shrink-0"></i>
+            <span class="whitespace-nowrap">Resume PDF</span>
+          </button>
+
+          <a href="#kontak" data-nudge="x" class="btn-shine hidden lg:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-slate-900 hover:bg-royal-700 rounded-xl transition-all shadow-sm shrink-0 whitespace-nowrap">
+            <span class="whitespace-nowrap">Hubungi Wali</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0"></i>
+          </a>
+
+          <button type="button" onclick="downloadPortfolioModal()" aria-label="Resume PDF" class="appbar-btn lg:hidden">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </button>
+          <a href="https://wa.me/6281234567890?text=Halo%20Orang%20Tua%20Kenzo%20Al-Fatih%2C%20saya%20tertarik%20dengan%20portofolio%20Kenzo" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp wali" class="appbar-btn lg:hidden">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (CLEAN & EDITORIAL) ================= -->
+  <section id="beranda" class="relative pt-6 pb-16 md:pt-20 md:pb-24 bg-white border-b border-slate-200/80 bg-paper-grid">
+    <div class="hero-dots" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <!-- Left: Text & Credentials -->
+        <div class="lg:col-span-7 space-y-6">
+
+          <div data-hero style="--h:0" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            <span>Portofolio Akademik</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-slate-500">Update Oktober 2026</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            <span class="w" style="--w:0"><span>Eksplorasi</span></span> <span class="w" style="--w:1"><span>Sains,</span></span> <span class="w" style="--w:2"><span>Logika,</span></span> <span class="w" style="--w:3"><span>&amp;</span></span> <span class="hero-mark font-serif italic font-normal text-royal-700"><span class="w" style="--w:4"><span>Dedikasi</span></span> <span class="w" style="--w:5"><span>Belajar.</span></span><svg class="hero-stroke" viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 8 C 60 2, 110 11, 160 6 S 250 3, 298 7" /></svg></span>
+          </h1>
+
+          <p data-hero style="--h:4" class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+            Laman dokumentasi rekam jejak <strong class="text-slate-900 font-semibold">Kenzo Al-Fatih</strong>. Menghimpun perjalanan belajar dari tingkat dasar, riset robotika otonom, olimpiade matematika, hingga kompetisi sains tingkat nasional dan internasional.
+          </p>
+
+          <!-- Action Buttons -->
+          <div data-hero style="--h:8" class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#prestasi" data-magnetic data-nudge="y" class="btn-shine px-6 py-3 rounded-xl bg-slate-900 hover:bg-royal-700 text-white font-semibold text-sm transition-all shadow-sm flex items-center gap-2">
+              <span>Lihat Koleksi Prestasi</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+            <a href="#pendidikan" class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold text-sm transition-all">
+              Riwayat Pendidikan
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Professional Profile Presentation -->
+        <div class="lg:col-span-5 order-first lg:order-none flex justify-center [perspective:1100px]">
+          <div id="hero-card" class="w-full max-w-sm">
+            
+            <div class="clean-card rounded-2xl p-3 lg:p-6 relative">
+              
+              <!-- Child's Portrait Container with Real Unsplash Photo -->
+              <div class="aspect-[16/10] lg:aspect-[4/4.8] rounded-xl overflow-hidden relative border border-slate-200 lg:mb-5 bg-slate-100 shadow-sm group">
+                <img src="https://images.unsplash.com/photo-1747936536833-d397b9768541?q=80&w=800&h=960&auto=format&fit=crop&crop=faces" alt="Kenzo Al-Fatih" class="w-full h-full object-cover object-[center_68%] lg:object-top group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                <div class="glare"></div>
+                <div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm border border-slate-200/90 rounded-lg p-2.5 shadow-sm flex items-center justify-between text-xs">
+                  <div>
+                    <span class="block font-bold text-slate-900">Kenzo Al-Fatih</span>
+                    <span class="text-[11px] text-slate-500">14 Tahun • Pelajar & Peneliti Muda</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Highlights -->
+              <div class="hidden lg:block space-y-3 pt-1 border-t border-slate-100 text-xs text-slate-600">
+                <div class="flex justify-between items-center py-1">
+                  <span class="text-slate-500">Sekolah Asal:</span>
+                  <span class="font-semibold text-slate-900">SMP Labschool Rawamangun</span>
+                </div>
+                <div class="flex justify-between items-center py-1">
+                  <span class="text-slate-500">Peringkat Akademik:</span>
+                  <span class="font-semibold text-slate-900">Peringkat 1 Paralel (Rata-rata 94.8)</span>
+                </div>
+                <div class="flex justify-between items-center py-1">
+                  <span class="text-slate-500">Fokus Bidang:</span>
+                  <span class="font-semibold text-royal-700">Sains Terapan & Robotika Otonom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= RINGKASAN ANGKA (STATS SECTION) ================= -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div data-stagger="scale" class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+          <div data-count="18" class="tabular-nums text-3xl sm:text-4xl font-extrabold text-amber-600 tracking-tight">18</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-900 mt-1">Medali Emas & Juara 1</div>
+          <p class="text-[11px] text-slate-500 mt-0.5">Olimpiade Sains & Robotika</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+          <div data-count="28" data-suffix="+" class="tabular-nums text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">28+</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-900 mt-1">Total Penghargaan Resmi</div>
+          <p class="text-[11px] text-slate-500 mt-0.5">Tingkat Kota hingga Dunia</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+          <div data-count="5" class="tabular-nums text-3xl sm:text-4xl font-extrabold text-royal-700 tracking-tight">5</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-900 mt-1">Ajang Tingkat Internasional</div>
+          <p class="text-[11px] text-slate-500 mt-0.5">Jepang, Singapura, dsb.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+          <div data-count="8" class="tabular-nums text-3xl sm:text-4xl font-extrabold text-emerald-700 tracking-tight">8</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-900 mt-1">Karya Inovasi Mandiri</div>
+          <p class="text-[11px] text-slate-500 mt-0.5">Prototipe IoT & Software AI</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TENTANG & BIDANG MINAT (REALISTIC & GROUNDED) ================= -->
+  <section id="tentang" class="py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div data-reveal class="max-w-3xl mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-royal-700">Profil & Karakter</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
+          Konsistensi Belajar & Semangat Menggali Solusi
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+          Kenzo memandang kompetisi sebagai sarana memperluas wawasan dan menguji gagasan. Di luar jam sekolah, ia secara teratur melatih logika algoritma, membaca jurnal sains pemula, dan merakit rangkaian elektronika secara mandiri.
+        </p>
+      </div>
+
+      <div data-stagger="up" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Pillar 1 -->
+        <div class="clean-card rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-royal-50 text-royal-700 flex items-center justify-center font-bold text-lg">
+            <i data-lucide="flask-conical" class="w-5 h-5 text-royal-700"></i>
+          </div>
+          <h3 class="font-bold text-base text-slate-900">Sains & Matematika Terapan</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Menekuni pemecahan soal analitik non-rutin, aljabar, dan konsep fisika dasar. Terbiasa membedah soal-soal berstandar OSN dan SIMCC sejak kelas 4 SD.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-[11px] text-slate-600">
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Logika Diskrit</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Olimpiade IPA</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Kalkulasi Cepat</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="clean-card rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-lg">
+            <i data-lucide="cpu" class="w-5 h-5 text-amber-700"></i>
+          </div>
+          <h3 class="font-bold text-base text-slate-900">Robotika Otonom & IoT</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mempelajari logika pemrograman berbasis C++ untuk mikrokontroler Arduino/ESP32 dan Lego Spike Prime. Mampu merancang alur otonom dengan sensor garis, sonar, dan inframerah.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-[11px] text-slate-600">
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Arduino C++</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">WRO RoboMission</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Sensor Kalibrasi</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="clean-card rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg">
+            <i data-lucide="crown" class="w-5 h-5 text-emerald-700"></i>
+          </div>
+          <h3 class="font-bold text-base text-slate-900">Catur & Komunikasi Ilmiah</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Menempa ketenangan berpikir strategis melalui catur cepat PERCASI serta melatih penyampaian argumen melalui pidato dan presentasi karya tulis ilmiah berbahasa Inggris.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-[11px] text-slate-600">
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Catur Cepat G-15</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">TOEFL Junior: 865</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Public Speaking</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PENDIDIKAN & PETA KAMPUS TERPADU ================= -->
+  <section id="pendidikan" class="py-20 bg-white border-b border-slate-200">
+    <!-- Anchor target for location deep links -->
+    <div id="lokasi" class="scroll-mt-24"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Unified Header -->
+      <div data-reveal class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div class="max-w-2xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-royal-700">Perjalanan Akademik & Ekosistem Sekolah</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
+            Riwayat Pendidikan Formal & Peta Kampus
+          </h2>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+            Menghubungkan rekam jejak sekolah formal, laboratorium riset robotika di Jakarta, hingga arena kompetisi internasional di Tokyo dan Singapura.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Integrated Split Layout: Timeline Cards (Left) + Interactive Map & Dashboard (Right) -->
+      <div data-reveal="scale" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Interactive Education Cards (5 cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- SMP Labschool -->
+          <div id="edu-card-labschool" onclick="selectLocation('labschool')" class="edu-card clean-card rounded-2xl p-5 border-2 border-royal-600 bg-royal-50/20 cursor-pointer hover:border-royal-600 transition-all shadow-sm">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                2023 - Sekarang (Aktif)
+              </span>
+              <span class="text-[11px] font-medium text-slate-500">Jakarta Timur</span>
+            </div>
+            <div class="mt-2.5">
+              <h3 class="text-base font-bold text-slate-900">SMP Labschool Rawamangun</h3>
+              <p class="text-xs text-royal-700 font-semibold mt-0.5">Kelas Prestasi & Program Pengayaan Sains</p>
+            </div>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Memimpin ekstrakurikuler Robotika dan aktif sebagai kontingen utama Olimpiade Sains Nasional (OSN). Rata-rata rapor 94.8 serta mewakili sekolah ke Tokyo dan Singapura.
+            </p>
+            <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-[11px] font-semibold text-slate-500">• Ranking 1 Paralel (2024 & 2025)</span>
+              <span class="edu-card-status text-xs font-bold text-royal-700 flex items-center gap-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                <span>Ditampilkan di Peta</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- SD Islam Al-Azhar 13 -->
+          <div id="edu-card-alazhar" onclick="selectLocation('alazhar')" class="edu-card clean-card rounded-2xl p-5 border-2 border-transparent bg-white cursor-pointer hover:border-slate-300 transition-all shadow-sm">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+                2017 - 2023 (Lulus)
+              </span>
+              <span class="text-[11px] font-medium text-slate-500">Jakarta Timur</span>
+            </div>
+            <div class="mt-2.5">
+              <h3 class="text-base font-bold text-slate-900">SD Islam Al-Azhar 13</h3>
+              <p class="text-xs text-slate-600 font-semibold mt-0.5">Lulusan Terbaik (Valedictorian)</p>
+            </div>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Mewakili sekolah di berbagai ajang MIPA sejak kelas 3 SD. Menerima anugerah Siswa Teladan Utama atas perolehan akumulatif 12 medali olimpiade SD.
+            </p>
+            <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-[11px] font-semibold text-slate-500">• Nilai Akhir Sempurna</span>
+              <span class="edu-card-status text-xs font-medium text-slate-500 flex items-center gap-1">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                <span>Lihat di Peta</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Klinik MIPA & Lab Robotika -->
+          <div id="edu-card-kpm" onclick="selectLocation('kpm')" class="edu-card clean-card rounded-2xl p-5 border-2 border-transparent bg-white cursor-pointer hover:border-slate-300 transition-all shadow-sm">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                Program Pembinaan STEM
+              </span>
+              <span class="text-[11px] font-medium text-slate-500">Bogor & Jakarta</span>
+            </div>
+            <div class="mt-2.5">
+              <h3 class="text-base font-bold text-slate-900">Klinik MIPA (KPM) & Sentra Robotika</h3>
+              <p class="text-xs text-amber-700 font-semibold mt-0.5">Penalaran Sains & Algoritma WRO</p>
+            </div>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Kurikulum pemecahan masalah non-konvensional MIPA serta pelatihan perakitan perangkat keras sensorik standar World Robot Olympiad.
+            </p>
+            <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-[11px] font-semibold text-slate-500">• Arena Uji Coba C++</span>
+              <span class="edu-card-status text-xs font-medium text-slate-500 flex items-center gap-1">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                <span>Lihat di Peta</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- International Quick Venue Switcher -->
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex items-center justify-between gap-2">
+            <span class="text-xs font-bold text-slate-700">Venue Internasional:</span>
+            <div class="flex gap-2">
+              <button type="button" onclick="selectLocation('tokyo')" class="tap px-3 py-1 bg-white hover:bg-slate-100 rounded-xl text-xs font-semibold text-slate-800 border border-slate-200 flex items-center gap-1 transition-colors">
+                <i data-lucide="flag" class="w-3.5 h-3.5 text-royal-700"></i> Tokyo Tech
+              </button>
+              <button type="button" onclick="selectLocation('singapore')" class="tap px-3 py-1 bg-white hover:bg-slate-100 rounded-xl text-xs font-semibold text-slate-800 border border-slate-200 flex items-center gap-1 transition-colors">
+                <i data-lucide="globe" class="w-3.5 h-3.5 text-royal-700"></i> Singapura
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Map Canvas & Dynamic Location Info Card (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col space-y-4">
+          
+          <!-- Leaflet OpenStreetMap Canvas -->
+          <div class="clean-card rounded-3xl overflow-hidden border border-slate-300 shadow-sm relative">
+            <div id="school-map" class="w-full h-[260px] sm:h-[400px] bg-slate-100"></div>
+
+            <!-- Floating Map Badge -->
+            <div class="absolute top-3 left-3 z-[400] bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-200 text-[11px] font-semibold text-slate-800 shadow-md flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="map-floating-label">SMP Labschool Rawamangun</span>
+            </div>
+
+            <!-- Recenter / Zoom Reset Button -->
+            <button type="button" onclick="resetMapView()" title="Reset Tampilan Peta" class="absolute bottom-3 right-3 z-[400] bg-white/95 hover:bg-slate-50 text-slate-700 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold shadow-md flex items-center gap-1.5 transition-colors">
+              <i data-lucide="focus" class="w-3.5 h-3.5 text-royal-700"></i>
+              <span>Fokus Lokasi</span>
+            </button>
+          </div>
+
+          <!-- Location Detail Info Card -->
+          <div id="location-card" class="clean-card rounded-3xl p-5 sm:p-6 border border-slate-300 space-y-4 shadow-sm">
+            
+            <div class="flex items-center justify-between gap-2">
+              <span id="loc-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-royal-50 text-royal-700 border border-royal-200">
+                Sekolah Utama Kenzo
+              </span>
+              <span id="loc-status" class="text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                Aktif (Kelas IX)
+              </span>
+            </div>
+
+            <div>
+              <h3 id="loc-name" class="text-lg sm:text-xl font-bold text-slate-900 mt-1">
+                SMP Labschool Rawamangun
+              </h3>
+              <p id="loc-subtitle" class="text-xs text-royal-700 font-semibold mt-0.5">
+                Sekolah Formal Aktif • Program Pengayaan Sains & Robotika
+              </p>
+            </div>
+
+            <!-- Preview Image & Address in responsive grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-3.5">
+              <div class="sm:col-span-5 aspect-[16/10] sm:aspect-auto sm:h-28 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative">
+                <img id="loc-photo" src="https://images.unsplash.com/photo-1743677077216-00a458eff9e0?q=80&w=700&auto=format&fit=crop" alt="Foto Lokasi" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-2">
+                  <p id="loc-photo-caption" class="text-white text-[10px] font-medium leading-tight">Laboratorium Sains Labschool</p>
+                </div>
+              </div>
+
+              <div class="sm:col-span-7 p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs flex flex-col justify-between">
+                <div class="flex items-start gap-2">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-royal-700 mt-0.5 shrink-0"></i>
+                  <p id="loc-address" class="text-slate-600 leading-relaxed text-[11px]">
+                    Jl. Pemuda No.1, Rawamangun, Kec. Pulo Gadung, Jakarta Timur, DKI Jakarta 13220
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <a id="loc-nav-link" href="https://www.google.com/maps/search/?api=1&query=-6.193262,106.883713" target="_blank" rel="noopener noreferrer" class="tap inline-flex items-center gap-1.5 text-xs font-semibold text-royal-700 hover:text-royal-900 transition-colors">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>Buka di Google Maps</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Milestone Roadmap -->
+      <div class="mt-16 pt-12 border-t border-slate-200">
+        <div data-reveal class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+          <div class="max-w-2xl">
+            <span class="text-xs font-bold uppercase tracking-wider text-royal-700">Perkembangan Berkelanjutan</span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
+              Alur Rekam Jejak 2017 – 2026
+            </h3>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Progres konsisten dari ketertarikan logika matematika dasar, penempaan sains berjenjang, hingga podium internasional.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-3 divide-x divide-slate-200 bg-white border border-slate-200 rounded-2xl shadow-sm text-center w-full sm:w-auto shrink-0 self-start lg:self-auto">
+            <div class="px-4 sm:px-6 py-3">
+              <p class="text-xl font-extrabold text-slate-900 tabular-nums leading-none">9+</p>
+              <p class="text-[11px] font-medium text-slate-500 whitespace-nowrap mt-1.5">Tahun belajar</p>
+            </div>
+            <div class="px-4 sm:px-6 py-3">
+              <p class="text-xl font-extrabold text-royal-700 tabular-nums leading-none">28+</p>
+              <p class="text-[11px] font-medium text-slate-500 whitespace-nowrap mt-1.5">Prestasi</p>
+            </div>
+            <div class="px-4 sm:px-6 py-3">
+              <p class="text-xl font-extrabold text-amber-700 tabular-nums leading-none">2</p>
+              <p class="text-[11px] font-medium text-slate-500 whitespace-nowrap mt-1.5">Emas dunia</p>
+            </div>
+          </div>
+        </div>
+
+        <ol data-stagger="up" class="roadmap">
+          <li class="roadmap-step ">
+            <button type="button" onclick="jumpToCategory('catur')" class="group block w-full text-left rounded-xl">
+              <span class="roadmap-node tabular-nums">01</span>
+              <span class="block text-xs font-bold text-slate-500 tabular-nums">2017 – 2020</span>
+              <span class="block text-sm font-bold text-slate-900 group-hover:text-royal-700 transition-colors leading-snug mt-1">Fondasi Minat MIPA</span>
+              <span class="block text-xs text-slate-600 leading-relaxed mt-1.5">Mulai menyukai logika matematika di SD Islam Al-Azhar 13 dan menjuarai catur pelajar tingkat kota.</span>
+              <span class="roadmap-tag">Klub Sains & Catur</span>
+            </button>
+          </li>
+          <li class="roadmap-step ">
+            <button type="button" onclick="jumpToCategory('sains')" class="group block w-full text-left rounded-xl">
+              <span class="roadmap-node tabular-nums">02</span>
+              <span class="block text-xs font-bold text-slate-500 tabular-nums">2021 – 2023</span>
+              <span class="block text-sm font-bold text-slate-900 group-hover:text-royal-700 transition-colors leading-snug mt-1">Valedictorian & IKMC Paris</span>
+              <span class="block text-xs text-slate-600 leading-relaxed mt-1.5">Skor sempurna 120/120 IKMC Paris, Emas Catur Junior DKI, dan lulus SD dengan predikat terbaik.</span>
+              <span class="roadmap-tag">12 Medali SD</span>
+            </button>
+          </li>
+          <li class="roadmap-step ">
+            <button type="button" onclick="jumpToCategory('sains')" class="group block w-full text-left rounded-xl">
+              <span class="roadmap-node tabular-nums">03</span>
+              <span class="block text-xs font-bold text-slate-500 tabular-nums">2023 – 2024</span>
+              <span class="block text-sm font-bold text-slate-900 group-hover:text-royal-700 transition-colors leading-snug mt-1">SMP Labschool & OSN</span>
+              <span class="block text-xs text-slate-600 leading-relaxed mt-1.5">Pengayaan Sains Labschool Rawamangun, Ketua Robotika, dan Medali Perak OSN IPA Nasional Puspresnas.</span>
+              <span class="roadmap-tag">Kontingen DKI</span>
+            </button>
+          </li>
+          <li class="roadmap-step is-peak">
+            <button type="button" onclick="jumpToCategory('internasional')" class="group block w-full text-left rounded-xl">
+              <span class="roadmap-node tabular-nums">04</span>
+              <span class="block text-xs font-bold text-slate-500 tabular-nums">2024 – 2025</span>
+              <span class="block text-sm font-bold text-slate-900 group-hover:text-royal-700 transition-colors leading-snug mt-1">Inovasi BRIN & Tokyo Tech</span>
+              <span class="block text-xs text-slate-600 leading-relaxed mt-1.5">Juara 1 Inovasi Riset Remaja BRIN (EcoSort AI) dan Emas Robotika Otonom di Tokyo Tech, Jepang.</span>
+              <span class="roadmap-tag">Podium Dunia</span>
+            </button>
+          </li>
+          <li class="roadmap-step is-next">
+            <button type="button" onclick="jumpToCategory('riset')" class="group block w-full text-left rounded-xl">
+              <span class="roadmap-node tabular-nums">05</span>
+              <span class="block text-xs font-bold text-slate-500 tabular-nums">2025 – 2026</span>
+              <span class="block text-sm font-bold text-slate-900 group-hover:text-royal-700 transition-colors leading-snug mt-1">Eksplorasi Riset Lanjutan</span>
+              <span class="block text-xs text-slate-600 leading-relaxed mt-1.5">Mematangkan portofolio machine learning terapan dan persiapan transisi jenjang SMA unggulan.</span>
+              <span class="roadmap-tag">Tahap Berikutnya</span>
+            </button>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRESTASI RESMI & DOKUMENTASI TERPADU ================= -->
+  <section id="prestasi" class="py-20 bg-slate-50 border-b border-slate-200">
+    <!-- Anchor target for deep links to galeri -->
+    <div id="galeri" class="scroll-mt-24"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Unified Section Header -->
+      <div data-reveal class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+        <div class="max-w-2xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-royal-700">Portofolio Prestasi</span>
+          <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight mt-1">
+            Koleksi Prestasi & Galeri Dokumentasi
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+            Sembilan prestasi pilihan dari 28 raihan kejuaraan resmi, lengkap dengan nomor sertifikat dan dokumentasi saat pengujian sensor robotik, sidang riset BRIN, hingga panggung kompetisi internasional.
+          </p>
+        </div>
+
+        <!-- Master View Switcher Tabs -->
+        <div class="flex items-center gap-1.5 bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm text-xs w-full sm:w-auto shrink-0 self-start lg:self-auto">
+          <button type="button" onclick="switchShowcaseTab('prestasi')" id="switch-tab-prestasi" class="showcase-tab-btn flex-1 sm:flex-none justify-center whitespace-nowrap active px-4 py-2 rounded-xl font-bold transition-all bg-slate-900 text-white shadow-sm flex items-center gap-2">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span class="sm:hidden">Prestasi (9)</span><span class="hidden sm:inline">Piagam & Prestasi (9)</span>
+          </button>
+          <button type="button" onclick="switchShowcaseTab('galeri')" id="switch-tab-galeri" class="showcase-tab-btn flex-1 sm:flex-none justify-center whitespace-nowrap px-4 py-2 rounded-xl font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center gap-2">
+            <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+            <span class="sm:hidden">Foto (9)</span><span class="hidden sm:inline">Foto & Dokumentasi (9)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW PANEL 1: PRESTASI & PIAGAM RESMI -->
+      <div id="panel-prestasi" class="showcase-panel transition-all">
+
+        <!-- Medal tally, doubles as a quick filter -->
+        <div id="tally" data-reveal class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4"></div>
+
+        <!-- Category pills, search, view switch -->
+        <div data-reveal class="bg-white rounded-2xl p-3 sm:p-4 mb-5 border border-slate-200 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+          <div class="relative isolate flex items-center gap-1.5 overflow-x-auto w-full lg:w-auto scrollbar-none" id="category-tabs">
+            <span id="tab-pill" class="slide-pill" aria-hidden="true"></span>
+            <button onclick="filterCategory('all', this)" aria-pressed="true" class="category-btn active px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all whitespace-nowrap">
+              Semua <span class="cat-count tabular-nums opacity-70" data-cat="all"></span>
+            </button>
+            <button onclick="filterCategory('robotika', this)" class="category-btn px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all whitespace-nowrap">
+              Robotika & IoT <span class="cat-count tabular-nums opacity-70" data-cat="robotika"></span>
+            </button>
+            <button onclick="filterCategory('sains', this)" class="category-btn px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all whitespace-nowrap">
+              Sains & Matematika <span class="cat-count tabular-nums opacity-70" data-cat="sains"></span>
+            </button>
+            <button onclick="filterCategory('riset', this)" class="category-btn px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all whitespace-nowrap">
+              Karya Tulis & Pidato <span class="cat-count tabular-nums opacity-70" data-cat="riset"></span>
+            </button>
+            <button onclick="filterCategory('catur', this)" class="category-btn px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all whitespace-nowrap">
+              Catur <span class="cat-count tabular-nums opacity-70" data-cat="catur"></span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2 w-full lg:w-auto">
+            <div class="relative flex-1 lg:w-60">
+              <input type="text" id="achievement-search" oninput="handleSearch(this.value)" placeholder="Cari lomba atau tahun..." aria-label="Cari prestasi" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 pl-9 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-royal-600 focus:bg-white transition-all">
+              <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+            </div>
+            <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl shrink-0" role="group" aria-label="Tampilan">
+              <button type="button" onclick="setAchievementView('grid')" data-view="grid" aria-pressed="true" class="ach-view-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 transition-all">
+                <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i><span>Kartu</span>
+              </button>
+              <button type="button" onclick="setAchievementView('timeline')" data-view="timeline" aria-pressed="false" class="ach-view-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 transition-all">
+                <i data-lucide="git-commit-vertical" class="w-3.5 h-3.5"></i><span>Linimasa</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-3 mb-4 px-1 text-xs text-slate-500">
+          <p><span id="visible-count" class="inline-block font-bold text-slate-900 tabular-nums">9</span> dari 9 prestasi pilihan</p>
+          <p id="carousel-pos" class="md:hidden flex items-center gap-1.5 font-medium" aria-hidden="true">
+            <span>Geser</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i><span id="carousel-pos-text" class="tabular-nums text-slate-900 font-bold">1/9</span>
+          </p>
+        </div>
+
+        <div id="achievements-grid" data-stagger="up" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <ol id="achievements-timeline" class="hidden"></ol>
+
+      <!-- No Results State -->
+      <div id="no-results" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-6">
+        <h4 class="font-bold text-base text-slate-900">Data Tidak Ditemukan</h4>
+        <p class="text-xs text-slate-500 mt-1">Coba kata kunci lain atau hapus filter yang aktif.</p>
+        <button onclick="resetFilters()" class="mt-3 px-4 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold">
+          Reset Filter
+        </button>
+      </div>
+
+    </div>
+    <!-- END PANEL PRESTASI -->
+
+    <!-- VIEW PANEL 2: GALERI DOKUMENTASI KEGIATAN -->
+    <div id="panel-galeri" class="showcase-panel hidden transition-all">
+      
+      <div data-reveal class="bg-white rounded-2xl p-4 mb-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <div>
+            <h3 class="text-sm font-bold text-slate-900">Album Foto Otentik & Panggung Perlombaan</h3>
+            <p class="text-xs text-slate-500">Dokumentasi otentik saat pengujian modul sensor, penganugerahan piala, dan sidang riset.</p>
+          </div>
+        </div>
+
+        <!-- Filter tabs for gallery -->
+        <div class="flex flex-wrap gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200 text-xs shrink-0">
+          <button type="button" onclick="filterGalleryCategory('all', this)" class="gal-filter-btn px-3 py-1.5 rounded-xl font-semibold transition-all active bg-slate-900 text-white shadow-sm">
+            Semua (9)
+          </button>
+          <button type="button" onclick="filterGalleryCategory('podium', this)" class="gal-filter-btn px-3 py-1.5 rounded-xl font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center">
+            <i data-lucide="trophy" class="w-3.5 h-3.5 inline-block mr-1"></i> Podium & Medali (3)
+          </button>
+          <button type="button" onclick="filterGalleryCategory('robotik', this)" class="gal-filter-btn px-3 py-1.5 rounded-xl font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center">
+            <i data-lucide="cpu" class="w-3.5 h-3.5 inline-block mr-1"></i> Lab Robotika (2)
+          </button>
+          <button type="button" onclick="filterGalleryCategory('sains', this)" class="gal-filter-btn px-3 py-1.5 rounded-xl font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center">
+            <i data-lucide="flask-conical" class="w-3.5 h-3.5 inline-block mr-1"></i> Riset & Sains (2)
+          </button>
+          <button type="button" onclick="filterGalleryCategory('sekolah', this)" class="gal-filter-btn px-3 py-1.5 rounded-xl font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center">
+            <i data-lucide="school" class="w-3.5 h-3.5 inline-block mr-1"></i> Sekolah & Catur (2)
+          </button>
+        </div>
+      </div>
+
+      <div id="gallery-grid" data-stagger="wipe" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Foto 1 (Tokyo Tech) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="podium" onclick="openPhotoModalByIndex(0)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=800&auto=format&fit=crop" alt="Penganugerahan Juara 1 Robotika" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              Podium Tokyo Tech 2025
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 3 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-royal-700">Tokyo Institute of Technology</span>
+              <span>Jan 2025</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Penganugerahan Juara 1 Robotika Tokyo</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Menerima piala emas autonomous rescue rover mewakili Indonesia.</p>
+          </div>
+        </div>
+
+        <!-- Foto 2 (Lab Robotika) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="robotik" onclick="openPhotoModalByIndex(1)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1562758778-e5638b5b6607?q=80&w=800&auto=format&fit=crop" alt="Kalibrasi & Modul Sensor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              Lab Robotika C++
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 4 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-amber-700">Sentra Robotika Jakarta</span>
+              <span>Des 2024</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Pengujian Modul Sensor Otonom & Kalibrasi</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Uji coba algoritma rute pathfinding inframerah & mikrokontroler ESP32.</p>
+          </div>
+        </div>
+
+        <!-- Foto 3 (Sidang BRIN) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="sains" onclick="openPhotoModalByIndex(2)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop" alt="Sidang Ilmiah Riset Remaja BRIN" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              Sidang Riset BRIN 2024
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 3 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-emerald-700">Gedung BJ Habibie BRIN</span>
+              <span>Okt 2024</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Presentasi Sidang Ilmiah EcoSort AI</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Mempertahankan model deteksi sampah berbasis computer vision.</p>
+          </div>
+        </div>
+
+        <!-- Foto 4 (Kejurda Catur DKI) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="sekolah" onclick="openPhotoModalByIndex(3)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800&auto=format&fit=crop" alt="Final Kejuaraan Daerah Catur Junior DKI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              Kejurda Catur DKI
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 2 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-slate-700">Percasi DKI Jakarta</span>
+              <span>Jul 2023</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Final Catur Cepat Junior KU-12</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Rekor tak terkalahkan 6.5 dari 7 babak Swiss System resmi provinsi.</p>
+          </div>
+        </div>
+
+        <!-- Foto 5 (Medali Perak OSN IPA) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="podium" onclick="openPhotoModalByIndex(4)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1706374503210-5f200b0b315b?q=80&w=800&auto=format&fit=crop" alt="Penganugerahan Medali Perak OSN IPA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              Medali Perak OSN IPA
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 3 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-royal-700">Puspresnas Kemendikbudristek</span>
+              <span>Sep 2024</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Penganugerahan Perak OSN Nasional</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Mewakili kontingen DKI Jakarta di panggung olimpiade sains nasional.</p>
+          </div>
+        </div>
+
+        <!-- Foto 6 (Perakitan WRO) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="robotik" onclick="openPhotoModalByIndex(5)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?q=80&w=800&auto=format&fit=crop" alt="Perakitan Robotika World Robot Olympiad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              WRO RoboMission
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 3 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-amber-700">Arena Seleksi WRO Nasional</span>
+              <span>Agt 2023</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Perakitan Sasis & Robot Spike Prime</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Menuntaskan misi logistik pelabuhan otonom dalam durasi 48 detik.</p>
+          </div>
+        </div>
+
+        <!-- Foto 7 (Klinik MIPA) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="sains" onclick="openPhotoModalByIndex(6)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" alt="Latihan Intensif Penalaran Olimpiade Sains" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              Klinik MIPA & SASMO
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 2 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-royal-700">KPM Jabodetabek</span>
+              <span>Mei 2024</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Simulasi Soal Penalaran Sains & Logika</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Pembinaan intensif pemecahan soal aljabar non-rutin standar Asia.</p>
+          </div>
+        </div>
+
+        <!-- Foto 8 (Labschool Science Fair) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="sekolah" onclick="openPhotoModalByIndex(7)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1743677077216-00a458eff9e0?q=80&w=800&auto=format&fit=crop" alt="Science Fair SMP Labschool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              SMP Labschool Rawamangun
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 4 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-emerald-700">Kampus Labschool Rawamangun</span>
+              <span>Nov 2024</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Edukasi & Pameran Sains Sekolah</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Mendemonstrasikan kerja sensor rover robotik di selasar laboratorium sekolah.</p>
+          </div>
+        </div>
+
+        <!-- Foto 9 (SASMO Suntec Singapura) -->
+        <div class="gallery-card clean-card rounded-2xl overflow-hidden group cursor-pointer" data-category="podium" onclick="openPhotoModalByIndex(8)">
+          <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative border-b border-slate-200">
+            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop" alt="Seremoni SIMCC Singapura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/95 text-slate-900 shadow-sm border border-slate-200">
+              SASMO Gold Singapura
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white shadow-sm flex items-center gap-1 backdrop-blur-sm">
+              <i data-lucide="camera" class="w-3 h-3"></i> 3 Foto
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-500">
+              <span class="font-semibold text-sky-700">Suntec Convention Centre</span>
+              <span>Jun 2024</span>
+            </div>
+            <p class="text-xs font-bold text-slate-900 group-hover:text-royal-700 transition-colors">Seremoni SASMO Gold Award Singapura</p>
+            <p class="text-[11px] text-slate-500 leading-relaxed">Menerima medali emas matematika bersama perwakilan pelajar Asia Pasifik.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- END GALLERY GRID -->
+    </div>
+    <!-- END PANEL GALERI -->
+
+  </div>
+</section>
+
+  <!-- ================= KESAKSIAN GURU & PEMBINA ================= -->
+  <section class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div data-reveal class="max-w-2xl mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-royal-700">Rekomendasi Pendidik</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
+          Catatan Guru & Pembina Olimpiade
+        </h2>
+      </div>
+
+      <div data-stagger="up" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="clean-card rounded-2xl p-6 flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+            "Kenzo memiliki ketajaman analitis yang sangat matang untuk usianya. Namun yang paling menonjol adalah kerendahan hatinya; ia selalu bersemangat membantu teman-teman sekelasnya yang kesulitan memahami materi matematika."
+          </p>
+          <div class="pt-4 mt-6 border-t border-slate-100 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1600896997793-b8ed3459a17f?q=80&w=150&h=150&auto=format&fit=crop&crop=faces" alt="Drs. Rahmadi" class="w-10 h-10 rounded-full object-cover border border-slate-200">
+            <div>
+              <p class="font-bold text-xs text-slate-900">Drs. Rahmadi, M.Pd.</p>
+              <p class="text-[11px] text-slate-500">Guru Pembina Olimpiade Sains & Matematika</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="clean-card rounded-2xl p-6 flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+            "Ketenangannya saat menghadapi kendala teknis saat uji coba robot di Tokyo mencerminkan kedewasaan mental seorang peneliti. Ia terbiasa mencari akar masalah secara sistematis dan tidak mudah menyerah."
+          </p>
+          <div class="pt-4 mt-6 border-t border-slate-100 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1625728273724-82363521a590?q=80&w=150&h=150&auto=format&fit=crop&crop=faces" alt="Agung Wicaksono" class="w-10 h-10 rounded-full object-cover border border-slate-200">
+            <div>
+              <p class="font-bold text-xs text-slate-900">Agung Wicaksono, S.T.</p>
+              <p class="text-[11px] text-slate-500">Kepala Laboratorium Robotika & Mentor WRO</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="clean-card rounded-2xl p-6 flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+            "Manajemen waktunya patut dijadikan teladan. Meskipun jadwal kompetisi dan pelatihannya padat, nilai akademik harian di seluruh mata pelajaran tetap berada di peringkat teratas."
+          </p>
+          <div class="pt-4 mt-6 border-t border-slate-100 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1728032038577-13053f714028?q=80&w=150&h=150&auto=format&fit=crop&crop=faces" alt="Siti Maryam" class="w-10 h-10 rounded-full object-cover border border-slate-200">
+            <div>
+              <p class="font-bold text-xs text-slate-900">Siti Maryam, S.Pd.</p>
+              <p class="text-[11px] text-slate-500">Wali Kelas IX SMP Labschool Rawamangun</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= KONTAK & NARAHUBUNG WALI RESMI ================= -->
+  <section id="kontak" class="py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div data-reveal class="clean-card rounded-3xl p-8 sm:p-12 border border-slate-300 shadow-sm bg-white text-center space-y-8">
+        
+        <!-- Header -->
+        <div class="max-w-xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-royal-50 text-royal-700 border border-royal-200">
+            <i data-lucide="users" class="w-3.5 h-3.5"></i>
+            <span>Narahubung Orang Tua / Wali</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Tertarik Mengundang atau Bekerja Sama?
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Terbuka untuk program pembinaan talenta riset, undangan kompetisi olimpiade internasional, serta beasiswa sekolah unggulan. Seluruh komunikasi dikoordinasikan langsung bersama orang tua / wali.
+          </p>
+        </div>
+
+        <!-- 2 Primary Direct Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-1">
+          <a href="https://wa.me/6281234567890?text=Halo%20Orang%20Tua%20Kenzo%20Al-Fatih%2C%20saya%20tertarik%20dengan%20portofolio%20Kenzo" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-royal-700 text-white font-semibold text-xs shadow-sm transition-all group">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span>Chat WhatsApp Wali (+62 812-3456-7890)</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors"></i>
+          </a>
+          <button type="button" onclick="copyEmailAddress()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200/80 text-slate-800 font-semibold text-xs border border-slate-200 transition-all">
+            <i data-lucide="mail" class="w-4 h-4 text-royal-700"></i>
+            <span>prestasi.kenzo@gmail.com</span>
+            <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-10 bg-slate-100 border-t border-slate-200 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-bold text-slate-900">Kenzo Al-Fatih • Portofolio Siswa</p>
+        <p class="text-[11px] text-slate-500 mt-0.5">Dikelola oleh keluarga Kenzo Al-Fatih.</p>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#beranda" class="hover:text-slate-900 transition-colors">Beranda</a>
+        <a href="#pendidikan" class="hover:text-slate-900 transition-colors">Pendidikan & Kampus</a>
+        <a href="#prestasi" class="hover:text-slate-900 transition-colors">Prestasi & Dokumentasi</a>
+        <a href="#kontak" class="hover:text-slate-900 transition-colors">Kontak</a>
+      </div>
+
+      <div>
+        <p>&copy; 2026 Kenzo Al-Fatih. Hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: SERTIFIKAT RESMI FORMAL ================= -->
+  <button id="to-top" type="button" aria-label="Kembali ke atas" class="to-top fixed bottom-5 right-5 z-30 w-11 h-11 rounded-xl bg-slate-900 hover:bg-royal-700 text-white shadow-lg flex items-center justify-center">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  </button>
+
+  <nav id="tabbar" class="tabbar" aria-label="Navigasi utama">
+    <a href="#beranda" data-tab="beranda" class="tab-btn is-active" aria-current="page">
+      <span class="tab-icon"><i data-lucide="home" class="w-5 h-5"></i></span>
+      <span>Beranda</span>
+    </a>
+    <a href="#pendidikan" data-tab="pendidikan" class="tab-btn">
+      <span class="tab-icon"><i data-lucide="graduation-cap" class="w-5 h-5"></i></span>
+      <span>Pendidikan</span>
+    </a>
+    <a href="#prestasi" data-tab="prestasi" class="tab-btn">
+      <span class="tab-icon"><i data-lucide="trophy" class="w-5 h-5"></i></span>
+      <span>Prestasi</span>
+    </a>
+    <a href="#galeri" data-tab="galeri" class="tab-btn">
+      <span class="tab-icon"><i data-lucide="camera" class="w-5 h-5"></i></span>
+      <span>Galeri</span>
+    </a>
+    <button type="button" data-tab="lainnya" aria-haspopup="dialog" aria-controls="more-sheet" class="tab-btn">
+      <span class="tab-icon"><i data-lucide="menu" class="w-5 h-5"></i></span>
+      <span>Lainnya</span>
+    </button>
+  </nav>
+
+  <div id="more-sheet" role="dialog" aria-modal="true" aria-labelledby="more-sheet-title" class="modal sheet fixed inset-0 z-50 hidden flex items-end justify-center bg-slate-900/50">
+    <div tabindex="-1" class="sheet-panel w-full max-w-lg bg-white rounded-t-3xl shadow-2xl px-3 pt-2">
+      <div class="sheet-grip" aria-hidden="true"></div>
+      <h2 id="more-sheet-title" class="px-2 pb-1 text-xs font-bold uppercase tracking-wider text-slate-500">Lainnya</h2>
+      <a href="#tentang" data-go="tentang" class="sheet-row">
+        <span class="sheet-ico"><i data-lucide="user-round" class="w-5 h-5"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="block text-sm font-semibold">Profil & Karakter</span>
+          <span class="block text-xs text-slate-500">Minat, nilai diri, dan keseharian Kenzo</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+      </a>
+      <a href="#kontak" data-go="kontak" class="sheet-row">
+        <span class="sheet-ico"><i data-lucide="mail" class="w-5 h-5"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="block text-sm font-semibold">Kontak Orang Tua</span>
+          <span class="block text-xs text-slate-500">Formulir pesan dan narahubung wali</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+      </a>
+      <button type="button" data-act="resume" class="sheet-row">
+        <span class="sheet-ico"><i data-lucide="file-text" class="w-5 h-5"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="block text-sm font-semibold">Resume PDF</span>
+          <span class="block text-xs text-slate-500">Unduh ringkasan portofolio</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+      </button>
+      <a href="https://wa.me/6281234567890?text=Halo%20Orang%20Tua%20Kenzo%20Al-Fatih%2C%20saya%20tertarik%20dengan%20portofolio%20Kenzo" target="_blank" rel="noopener noreferrer" class="sheet-row">
+        <span class="sheet-ico" style="background:#d1fae5;color:#047857"><i data-lucide="message-circle" class="w-5 h-5"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="block text-sm font-semibold">Chat WhatsApp Wali</span>
+          <span class="block text-xs text-slate-500">Terbuka di aplikasi WhatsApp</span>
+        </span>
+        <i data-lucide="external-link" class="w-4 h-4 text-slate-400 shrink-0"></i>
+      </a>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title" class="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="modal-panel relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-white rounded-2xl border border-slate-300 p-6 sm:p-8 shadow-2xl">
+
+      <!-- Close Button -->
+      <button onclick="closeCertificateModal()" aria-label="Tutup" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 hover:rotate-90 text-slate-600 flex items-center justify-center transition-all duration-300">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Modal Content Body -->
+      <div id="modal-content">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL: FOTO DOKUMENTASI ================= -->
+  <div id="photo-modal" role="dialog" aria-modal="true" aria-labelledby="photo-modal-title" class="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="modal-panel modal-panel--flat relative w-full max-w-2xl bg-white rounded-2xl border border-slate-300 p-5 sm:p-6 shadow-2xl space-y-4">
+      <button onclick="closePhotoModal()" aria-label="Tutup" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white hover:bg-slate-100 hover:rotate-90 text-slate-700 border border-slate-200 shadow-sm flex items-center justify-center transition-all duration-300">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+      <div id="photo-frame" class="relative w-full aspect-[4/3] max-h-[50vh] bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+        <img id="photo-modal-img" src="" alt="Dokumentasi" class="w-full h-full object-cover">
+        <button type="button" onclick="stepPhoto(-1)" aria-label="Foto sebelumnya" class="photo-nav absolute left-3 top-1/2 -mt-5 w-10 h-10 rounded-full bg-white text-slate-800 shadow-md flex items-center justify-center">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        </button>
+        <button type="button" onclick="stepPhoto(1)" aria-label="Foto berikutnya" class="photo-nav absolute right-3 top-1/2 -mt-5 w-10 h-10 rounded-full bg-white text-slate-800 shadow-md flex items-center justify-center">
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+        <span id="photo-counter" class="tabular-nums absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-slate-900/80 text-white text-[11px] font-semibold"></span>
+      </div>
+      <div id="photo-modal-text">
+        <div class="flex items-center justify-between gap-2">
+          <span id="photo-modal-badge" class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-800 border border-slate-200">Kategori</span>
+          <span id="photo-modal-meta" class="text-[11px] text-slate-500 font-semibold">Waktu & Tempat</span>
+        </div>
+        <h4 id="photo-modal-title" class="font-bold text-lg text-slate-900 mt-1">Judul Dokumentasi</h4>
+        <p id="photo-modal-desc" class="text-xs text-slate-600 mt-1.5 leading-relaxed">Keterangan lengkap foto dokumentasi kegiatan.</p>
+      </div>
+
+      <!-- Quick Thumbnail Switcher Strip -->
+      <div>
+        <p class="text-[11px] font-bold text-slate-500 mb-1.5">Jelajahi Foto Album Lainnya:</p>
+        <div id="photo-thumb-strip" class="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+          <!-- Dynamically populated thumbnails -->
+        </div>
+      </div>
+
+      <div class="pt-2 flex items-center justify-between border-t border-slate-100">
+        <button type="button" onclick="shareActivePhoto()" class="text-xs font-semibold text-royal-700 hover:text-royal-900 flex items-center gap-1.5 transition-colors">
+          <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+          <span>Salin Tautan Foto</span>
+        </button>
+
+        <button onclick="closePhotoModal()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: UNDUH RESUME ================= -->
+  <div id="download-modal" role="dialog" aria-modal="true" aria-labelledby="download-modal-title" class="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="modal-panel relative w-full max-w-md bg-white rounded-2xl border border-slate-300 p-6 text-center space-y-4 shadow-2xl">
+      <div class="w-12 h-12 rounded-xl bg-slate-100 text-royal-700 mx-auto flex items-center justify-center">
+        <i data-lucide="file-text" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h3 id="download-modal-title" class="font-bold text-lg text-slate-900">Unduh Portofolio Resmi</h3>
+        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+          Dokumen ringkasan kurikulum vitae, transkrip nilai akademik, serta salinan legalisir seluruh piagam penghargaan.
+        </p>
+      </div>
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="triggerSimulatedDownload()" class="w-full py-2.5 bg-slate-900 hover:bg-royal-700 text-white rounded-xl text-xs font-semibold shadow-sm transition-colors">
+          Download Salinan PDF (3.2 MB)
+        </button>
+        <button onclick="closeDownloadModal()" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold">
+          Batal
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    /* ----------------------------------------------------
+       1. DATA SERTIFIKAT & PIAGAM RESMI
+    ----------------------------------------------------- */
+    const certDatabase = {
+      'cert-tyo': {
+        title: 'Juara 1 (Gold Medal) - International Youth STEM Robotics Cup',
+        org: 'Tokyo Institute of Technology, Tokyo, Jepang',
+        number: 'TYO-STEM-2025-089-GOLD',
+        date: '18 Januari 2025',
+        predikat: 'Juara 1 Kategori Autonomous Rescue Rover',
+        desc: 'Mencapai skor navigasi otonom 100/100 dalam menyelesaikan rintangan simulasi bencana tanpa penalti waktu, bersaing dengan perwakilan pelajar dari 42 negara.',
+        tags: ['Internasional', 'Jepang', 'Tokyo Tech']
+      },
+      'cert-osn': {
+        title: 'Medali Perak Olimpiade Sains Nasional (OSN) SMP - Bidang IPA',
+        org: 'Pusat Prestasi Nasional (Puspresnas), Kemendikbudristek RI',
+        number: 'PUSPRESNAS/OSN-SMP/2024/0912',
+        date: '10 September 2024',
+        predikat: 'Medali Perak Tingkat Nasional',
+        desc: 'Mewakili kontingen Provinsi DKI Jakarta setelah lolos seleksi berjenjang tingkat kota dan provinsi, menuntaskan ujian teori dan praktikum laboratorium.',
+        tags: ['Nasional Resmi', 'Kemendikbudristek', 'OSN']
+      },
+      'cert-sasmo': {
+        title: 'SASMO Gold Award - Singapore Asian Schools Math Olympiad',
+        org: 'Singapore International Math Contests Centre (SIMCC)',
+        number: 'SIMCC/SASMO/ID/2024/774',
+        date: '12 Mei 2024',
+        predikat: 'Gold Award (Jajaran 8% Teratas)',
+        desc: 'Meraih skor medali emas dalam kompetisi pemecahan soal logika aljabar dan penalaran kombinatorika internasional.',
+        tags: ['Asia Pasifik', 'SIMCC Singapore', 'Matematika']
+      },
+      'cert-riset': {
+        title: '1st Place Best Innovation - National Youth Scientific Research Fair',
+        org: 'BRIN (Badan Riset dan Inovasi Nasional) & IYSA',
+        number: 'BRIN-IYSA/ENV/2024/011',
+        date: '24 Oktober 2024',
+        predikat: 'Juara 1 Inovasi Sains & Lingkungan',
+        desc: 'Pengembangan EcoSort AI: Prototipe kotak tempat sampah pintar berbasis pemrosesan citra kamera untuk penyortiran sampah anorganik.',
+        tags: ['Riset Terapan', 'BRIN', 'Inovasi']
+      },
+      'cert-catur': {
+        title: 'Juara 1 Kejuaraan Daerah Catur Junior DKI Jakarta',
+        org: 'Pengurus Provinsi PERCASI DKI Jakarta',
+        number: 'PERCASI-DKI/KEJURDA/2023/KU12-01',
+        date: '15 Juli 2023',
+        predikat: 'Juara 1 Emas Catur Cepat (KU-12)',
+        desc: 'Meraih skor 6.5 dari 7 babak Swiss System pada kejuaraan resmi catur junior provinsi.',
+        tags: ['Provinsi DKI', 'PERCASI', 'Catur Cepat']
+      },
+      'cert-wro': {
+        title: 'Juara 2 Nasional World Robot Olympiad (WRO) - RoboMission Junior',
+        org: 'World Robot Olympiad & Mikrobot Indonesia',
+        number: 'WRO-ID/2023/ROBO-JR-02',
+        date: '28 Agustus 2023',
+        predikat: 'Juara 2 (Perak) Seleksi Nasional',
+        desc: 'Menyelesaikan tantangan otomasi logistik pelabuhan menggunakan robot Spike Prime otonom dengan catatan waktu 48 detik.',
+        tags: ['WRO', 'Robotika Otonom', 'Nasional']
+      },
+      'cert-ikmc': {
+        title: 'Perfect Scorer Gold Medal - International Kangaroo Math Contest',
+        org: 'Association Kangourou Sans Frontières (AKSF) Paris',
+        number: 'IKMC-ID-2023-CADET-PERFECT',
+        date: '3 April 2023',
+        predikat: 'Skor Sempurna 120/120 & Medali Emas',
+        desc: 'Menuntaskan seluruh butir soal penalaran logika tanpa pengurangan poin pada kategori peserta Cadet.',
+        tags: ['AKSF Paris', 'Skor 120/120', 'Internasional']
+      },
+      'cert-speech': {
+        title: '1st Place & Best Speaker - Youth English Oratorical Contest',
+        org: 'Universitas Indonesia & Mitra Edukasi Bahasa',
+        number: 'UI-ORATORICAL/2024/001',
+        date: '19 November 2024',
+        predikat: 'Juara 1 & Pembicara Terbaik',
+        desc: 'Menyampaikan pidato ilmiah bahasa Inggris terkait etika pemanfaatan teknologi bagi pelajar dengan nilai artikulasi tertinggi.',
+        tags: ['Bahasa Inggris', 'Pidato Ilmiah', 'Universitas Indonesia']
+      },
+      'cert-bebras': {
+        title: 'Peringkat 1 Nasional Tantangan Berpikir Komputasional Bebras',
+        org: 'Biro Bebras Indonesia & Institut Teknologi Bandung (ITB)',
+        number: 'BEBRAS-ITB/2023/PENGALANG/01',
+        date: '14 November 2023',
+        predikat: 'Peringkat 1 Tingkat Nasional',
+        desc: 'Kecakapan berpikir analitis pemecahan masalah algoritma dan abstraksi komputasional.',
+        tags: ['ITB Bandung', 'Algoritma', 'Bebras']
+      }
+    };
+
+    const motionOK = document.documentElement.classList.contains('js-anim');
+    const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+    const $ = (sel, root = document) => root.querySelector(sel);
+    const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+    function movePill(pill, target) {
+      if (!pill || !target) return;
+      pill.style.width = target.offsetWidth + 'px';
+      pill.style.height = target.offsetHeight + 'px';
+      pill.style.transform = `translate(${target.offsetLeft}px, ${target.offsetTop}px)`;
+      pill.style.opacity = 1;
+      requestAnimationFrame(() => pill.classList.add('is-ready'));
+    }
+
+    /* ----------------------------------------------------
+       2. FILTERING & SEARCHING
+    ----------------------------------------------------- */
+    let currentCategory = 'all';
+    let currentStat = null;
+    let currentSearch = '';
+    let achievementView = 'grid';
+
+    // `photo` indexes galleryDatabase, `loc` keys mapLocations, `key` keys certDatabase.
+    const achievements = [
+      { key: 'cert-tyo', featured: true, cat: ['robotika'], medal: 'emas', level: 'internasional', when: '2025-01-18', badge: 'Juara 1 (Emas)', icon: 'medal', tone: 'amber', title: 'International Youth STEM Robotics Cup', org: 'Tokyo Institute of Technology • Tokyo, Jepang', desc: 'Membangun robot autonomous penyelamat bencana "AeroScout Rover" berbasis pendeteksi korban inframerah dan sensor LIDAR pada arena uji standar kebencanaan.', tags: ['Tingkat Internasional', '42 Negara'], no: 'TYO-2025-089', photo: 0, loc: 'tokyo', kw: 'tokyo jepang emas juara 1' },
+      { key: 'cert-osn', cat: ['sains'], medal: 'perak', level: 'nasional', when: '2024-09-10', badge: 'Medali Perak Nasional', icon: 'medal', tone: 'slate', title: 'Olimpiade Sains Nasional (OSN) SMP - Bidang IPA', org: 'Puspresnas, Kemendikbudristek RI', desc: 'Mewakili Provinsi DKI Jakarta setelah melewati tahapan seleksi kota dan provinsi, menyelesaikan tes teori sains komprehensif dan uji eksperimen lab.', tags: ['Tingkat Nasional', '38 Provinsi'], no: 'OSN-24-IPA-41', photo: 4, kw: 'osn ipa perak kemendikbud' },
+      { key: 'cert-sasmo', cat: ['sains'], medal: 'emas', level: 'internasional', when: '2024-05-12', badge: 'Gold Award (Top 8%)', icon: 'award', tone: 'amber', title: 'Singapore and Asian Schools Math Olympiad (SASMO)', org: 'SIMCC (Singapore International Math Contests Centre)', desc: 'Menduduki jajaran peraih nilai tertinggi kelompok usia dan lolos otomatis sebagai delegasi Indonesia ke ajang final IJMO di Bali.', tags: ['Tingkat Asia', 'Matematika Olimpiade'], no: 'SASMO-ID-992', photo: 8, loc: 'singapore', kw: 'sasmo singapura gold emas matematika' },
+      { key: 'cert-riset', cat: ['riset', 'robotika'], medal: 'emas', level: 'nasional', when: '2024-10-24', badge: 'Juara 1 Best Innovation', icon: 'trophy', tone: 'royal', title: 'National Youth Scientific Research Fair', org: 'BRIN (Badan Riset dan Inovasi Nasional) & IYSA', desc: 'Mempresentasikan "EcoSort AI", prototipe kotak pemilah sampah anorganik berbasis sensor optik dan klasifikasi citra sederhana.', tags: ['Riset Terapan', 'BRIN & IYSA'], no: 'BRIN-2024-03', photo: 2, kw: 'brin inovasi ecosort juara 1 riset' },
+      { key: 'cert-catur', cat: ['catur'], medal: 'emas', level: 'provinsi', when: '2023-07-15', badge: 'Juara 1 Emas Catur Cepat', icon: 'crown', tone: 'amber', title: 'Kejuaraan Daerah Catur Junior PERCASI DKI Jakarta', org: 'Pengurus Provinsi PERCASI DKI Jakarta', desc: 'Memenangkan kategori catur cepat G-15 menit KU-12 dengan rekor tanpa kekalahan (skor 6.5 dari 7 babak Swiss).', tags: ['Tingkat Provinsi DKI', 'PERCASI Resmi'], no: 'DKI-CATUR-23', photo: 3, kw: 'catur percasi dki jakarta emas' },
+      { key: 'cert-wro', cat: ['robotika'], medal: 'perak', level: 'nasional', when: '2023-08-28', badge: 'Juara 2 (Perak Nasional)', icon: 'medal', tone: 'slate', title: 'World Robot Olympiad (WRO) Indonesia - RoboMission', org: 'Mikrobot & Asosiasi Robotika Indonesia', desc: 'Menyelesaikan misi sorting kontainer otomatis pelabuhan dalam waktu 48 detik tanpa penalti poin teknis.', tags: ['Seleksi Nasional WRO', 'Junior Category'], no: 'WRO-ID-2023', photo: 5, kw: 'wro robomission perak juara 2' },
+      { key: 'cert-ikmc', cat: ['sains'], medal: 'emas', level: 'internasional', when: '2023-04-03', badge: 'Gold Award (Skor 120/120)', icon: 'award', tone: 'amber', title: 'International Kangaroo Math Contest (IKMC)', org: 'Association Kangourou Sans Frontières (AKSF) Paris', desc: 'Mencatat skor sempurna pada seluruh 30 soal penalaran logika tanpa kesalahan, bersaing dengan puluhan ribu peserta se-Indonesia.', tags: ['Tingkat Internasional', 'Perfect Score'], no: 'IKMC-2023-120', photo: 6, kw: 'ikmc kangaroo skor sempurna 120 emas' },
+      { key: 'cert-speech', cat: ['riset'], medal: 'emas', level: 'nasional', when: '2024-11-19', badge: '1st Place & Best Speaker', icon: 'mic', tone: 'royal', title: 'Youth English Oratorical Contest', org: 'Universitas Indonesia & Mitra Edukasi', desc: 'Membawakan pidato ilmiah berbahasa Inggris mengenai pemanfaatan etis teknologi bagi penanganan isu lingkungan di hadapan dewan akademisi.', tags: ['Bahasa Inggris', 'Pidato Ilmiah'], no: 'UI-ENG-2024', photo: 2, kw: 'pidato bahasa inggris juara 1' },
+      { key: 'cert-bebras', cat: ['sains', 'robotika'], medal: 'emas', level: 'nasional', when: '2023-11-14', badge: 'Peringkat 1 Nasional', icon: 'award', tone: 'amber', title: 'Tantangan Berpikir Komputasional Bebras Indonesia', org: 'Biro Bebras Indonesia & Institut Teknologi Bandung (ITB)', desc: 'Menuntaskan tantangan pemecahan masalah logika komputasi, dekomposisi struktur data, dan penalaran algoritma tingkat penggalang.', tags: ['Tingkat Nasional', 'Bebras Indonesia'], no: 'BEBRAS-2023', photo: 7, kw: 'bebras computational thinking itb juara 1 emas' }
+    ];
+
+    const ACH_TONE = { amber: 'text-amber-600', slate: 'text-slate-500', royal: 'text-royal-700' };
+    const ACH_LEVEL = { internasional: 'Internasional', nasional: 'Nasional', provinsi: 'Provinsi' };
+    const TALLY = [
+      { stat: 'emas', label: 'Juara 1 & Emas', icon: 'trophy', tone: 'text-amber-600 bg-amber-50' },
+      { stat: 'perak', label: 'Medali Perak', icon: 'medal', tone: 'text-slate-600 bg-slate-100' },
+      { stat: 'internasional', label: 'Tingkat Internasional', icon: 'globe', tone: 'text-royal-700 bg-royal-50' },
+      { stat: 'nasional', label: 'Tingkat Nasional', icon: 'flag', tone: 'text-emerald-700 bg-emerald-50' }
+    ];
+    const hasStat = (a, stat) => a.medal === stat || a.level === stat;
+    const achThumb = (a, w) => galleryDatabase[a.photo].img.replace(/w=\d+/, 'w=' + w);
+
+    function achievementCard(a, peek) {
+      const f = a.featured;
+      return `
+        <article class="achievement-card clean-card rounded-2xl overflow-hidden flex flex-col cursor-pointer ${f ? 'md:col-span-2 lg:col-span-3 md:flex-row' : ''} ${peek ? 'is-in' : ''}" data-key="${a.key}">
+          <div class="ach-thumb relative shrink-0 bg-slate-100 overflow-hidden aspect-[16/9] ${f ? 'md:aspect-auto md:w-5/12 md:min-h-[18rem]' : ''}">
+            <img src="${achThumb(a, f ? 900 : 600)}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+            <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold bg-white/95 text-slate-900 shadow-sm">
+              <i data-lucide="${a.icon}" class="ach-ico w-3.5 h-3.5 ${ACH_TONE[a.tone]}"></i>${a.badge}
+            </span>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg text-xs font-bold bg-slate-900/80 text-white tabular-nums">${a.when.slice(0, 4)}</span>
+          </div>
+          <div class="flex flex-col flex-1 min-w-0 p-5 ${f ? 'md:p-8 md:justify-center' : ''}">
+            <div class="flex-1 ${f ? 'md:flex-none' : ''}">
+              ${f ? '<p class="text-[11px] font-bold uppercase tracking-wider text-amber-700 mb-2">Prestasi Tertinggi</p>' : ''}
+              <h3 class="font-bold text-slate-900 leading-snug ${f ? 'text-lg md:text-2xl tracking-tight' : 'text-base'}">${a.title}</h3>
+              <p class="text-xs text-slate-500 mt-1">${a.org}</p>
+              <p class="text-slate-600 leading-relaxed mt-3 ${f ? 'text-xs md:text-sm' : 'text-xs'}">${a.desc}</p>
+              <div class="flex flex-wrap gap-1.5 mt-3 text-[11px] text-slate-600">
+                ${a.tags.map(t => `<span class="px-2 py-0.5 bg-slate-100 rounded">${t}</span>`).join('')}
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between gap-3 text-xs">
+              <span class="font-mono text-slate-500 text-[11px] truncate">#${a.no}</span>
+              <span class="flex items-center gap-3 shrink-0">
+                ${a.loc ? `<button type="button" data-loc="${a.loc}" class="tap font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1 transition-colors"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span>Lokasi</span></button>` : ''}
+                <button type="button" class="tap font-semibold text-royal-700 hover:text-royal-900 flex items-center gap-1 transition-colors"><span>Lihat Detail</span><i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></button>
+              </span>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function achievementRow(a) {
+      return `
+        <li>
+          <button type="button" class="ach-tl-row clean-card rounded-2xl p-3 w-full flex items-center gap-3.5 text-left" data-key="${a.key}">
+            <span class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0"><img src="${achThumb(a, 200)}" alt="" loading="lazy" class="w-full h-full object-cover"></span>
+            <span class="flex-1 min-w-0">
+              <span class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px]">
+                <span class="inline-flex items-center gap-1 font-bold text-slate-900"><i data-lucide="${a.icon}" class="w-3.5 h-3.5 ${ACH_TONE[a.tone]}"></i>${a.badge}</span>
+                <span class="px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-semibold">${ACH_LEVEL[a.level]}</span>
+                <span class="text-slate-500">${certDatabase[a.key].date}</span>
+              </span>
+              <span class="block font-bold text-sm text-slate-900 leading-snug mt-1">${a.title}</span>
+              <span class="block text-xs text-slate-500 mt-0.5 truncate">${a.org}</span>
+            </span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>
+          </button>
+        </li>`;
+    }
+
+    function renderAchievements() {
+      const grid = $('#achievements-grid');
+      const timeline = $('#achievements-timeline');
+      // Stagger-reveal waits for each card to scroll in, which would hide the peeking next card of the phone carousel.
+      const peek = matchMedia('(max-width: 767.98px)').matches;
+      grid.innerHTML = achievements.map(a => achievementCard(a, peek)).join('');
+
+      const byDate = [...achievements].sort((a, b) => a.when.localeCompare(b.when));
+      const years = [...new Set(byDate.map(a => a.when.slice(0, 4)))];
+      timeline.innerHTML = years.map(year => `
+        <li class="ach-tl-year">
+          <p class="inline-flex px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-bold tabular-nums">${year}</p>
+          <ol class="ach-tl-list space-y-3 mt-3">${byDate.filter(a => a.when.startsWith(year)).map(achievementRow).join('')}</ol>
+        </li>`).join('');
+
+      $('#tally').innerHTML = TALLY.map(t => {
+        const n = achievements.filter(a => hasStat(a, t.stat)).length;
+        return `
+          <button type="button" class="tally-btn bg-white rounded-2xl border border-slate-200 p-3 sm:p-3.5 flex items-center gap-3 text-left transition-all" data-stat="${t.stat}" aria-pressed="false">
+            <span class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${t.tone}"><i data-lucide="${t.icon}" class="w-5 h-5"></i></span>
+            <span class="min-w-0">
+              <span class="block text-xl font-extrabold text-slate-900 tabular-nums leading-none" data-count="${n}">${n}</span>
+              <span class="block text-[11px] font-medium text-slate-500 leading-tight mt-1">${t.label}</span>
+            </span>
+          </button>`;
+      }).join('');
+
+      $$('.cat-count').forEach(el => {
+        const cat = el.dataset.cat;
+        el.textContent = cat === 'all' ? achievements.length : achievements.filter(a => a.cat.includes(cat)).length;
+      });
+
+      $('#tally').addEventListener('click', e => {
+        const btn = e.target.closest('.tally-btn');
+        if (btn) setStat(btn.dataset.stat === currentStat ? null : btn.dataset.stat);
+      });
+      const open = e => {
+        const loc = e.target.closest('[data-loc]');
+        if (loc) { goToLocation(loc.dataset.loc); return; }
+        const item = e.target.closest('[data-key]');
+        if (item) openCertificateModal(item.dataset.key);
+      };
+      grid.addEventListener('click', open);
+      timeline.addEventListener('click', open);
+
+      let queued = false;
+      grid.addEventListener('scroll', () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => { queued = false; updateCarouselPos(); });
+      }, { passive: true });
+    }
+
+    function updateCarouselPos() {
+      const grid = $('#achievements-grid');
+      const cards = $$('.achievement-card:not(.hidden)', grid);
+      const mid = grid.getBoundingClientRect().left + grid.clientWidth / 2;
+      let nearest = 0;
+      cards.forEach((card, i) => {
+        const r = card.getBoundingClientRect();
+        const best = cards[nearest].getBoundingClientRect();
+        if (Math.abs(r.left + r.width / 2 - mid) < Math.abs(best.left + best.width / 2 - mid)) nearest = i;
+      });
+      $('#carousel-pos-text').textContent = cards.length ? `${nearest + 1}/${cards.length}` : '0/0';
+    }
+
+    function filterCategory(cat, btn) {
+      currentCategory = cat;
+      $$('.category-btn').forEach(b => {
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-pressed', b === btn);
+      });
+      movePill($('#tab-pill'), btn);
+      runFilters();
+    }
+
+    function setStat(stat) {
+      currentStat = stat;
+      $$('.tally-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.stat === stat));
+      runFilters();
+    }
+
+    function setAchievementView(view) {
+      achievementView = view;
+      $$('.ach-view-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === view));
+      $('#achievements-grid').classList.toggle('hidden', view !== 'grid');
+      $('#achievements-timeline').classList.toggle('hidden', view !== 'timeline');
+      $('#carousel-pos').classList.toggle('hidden', view !== 'grid');
+      if (motionOK) {
+        const shown = view === 'grid' ? $('#achievements-grid') : $('#achievements-timeline');
+        shown.animate([{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: EASE });
+      }
+    }
+
+    function jumpToCategory(cat) {
+      const pill = document.querySelector(`.category-btn[onclick*="'${cat}'"]`);
+      if (pill) {
+        setStat(null);
+        filterCategory(cat, pill);
+      } else {
+        filterCategory('all', $('.category-btn'));
+        setStat(TALLY.some(t => t.stat === cat) ? cat : null);
+      }
+      if (showcaseView !== 'prestasi') switchShowcaseTab('prestasi');
+      const el = document.getElementById('prestasi');
+      if (el) el.scrollIntoView({ behavior: motionOK ? 'smooth' : 'auto' });
+    }
+
+    function goToLocation(key) {
+      selectLocation(key);
+      $('#school-map').scrollIntoView({ behavior: motionOK ? 'smooth' : 'auto', block: 'center' });
+    }
+
+    function handleSearch(val) {
+      currentSearch = val.toLowerCase().trim();
+      runFilters();
+    }
+
+    function runFilters() {
+      const cards = $$('#achievements-grid .achievement-card');
+      const before = new Map();
+      cards.forEach(card => {
+        if (!card.classList.contains('hidden')) before.set(card, card.getBoundingClientRect());
+      });
+
+      const visible = new Set(achievements.filter(a => {
+        const text = [a.title, a.org, a.desc, a.badge, a.no, a.kw, a.when.slice(0, 4), ...a.tags].join(' ').toLowerCase();
+        return (currentCategory === 'all' || a.cat.includes(currentCategory))
+          && (!currentStat || hasStat(a, currentStat))
+          && (!currentSearch || text.includes(currentSearch));
+      }).map(a => a.key));
+      const count = visible.size;
+
+      cards.forEach(card => card.classList.toggle('hidden', !visible.has(card.dataset.key)));
+      $$('#achievements-timeline .ach-tl-row').forEach(row => row.parentElement.classList.toggle('hidden', !visible.has(row.dataset.key)));
+      $$('#achievements-timeline .ach-tl-year').forEach(group => {
+        group.classList.toggle('hidden', !$('.ach-tl-list > li:not(.hidden)', group));
+      });
+      $('#achievements-grid').scrollLeft = 0;
+      updateCarouselPos();
+
+      if (motionOK && achievementView === 'grid') {
+        let entering = 0;
+        cards.forEach(card => {
+          if (card.classList.contains('hidden')) return;
+          const from = before.get(card);
+          if (!from) {
+            card.classList.add('is-in');
+            card.animate(
+              [{ opacity: 0, transform: 'scale(0.94)' }, { opacity: 1, transform: 'none' }],
+              { duration: 380, delay: entering++ * 45, easing: EASE, fill: 'backwards' }
+            );
+            return;
+          }
+          const to = card.getBoundingClientRect();
+          const dx = from.left - to.left;
+          const dy = from.top - to.top;
+          if (dx || dy) {
+            card.animate(
+              [{ transform: `translate(${dx}px, ${dy}px)` }, { transform: 'none' }],
+              { duration: 480, easing: EASE }
+            );
+          }
+        });
+      }
+
+      const counter = $('#visible-count');
+      if (counter.textContent !== String(count)) {
+        counter.textContent = count;
+        if (motionOK) {
+          counter.animate(
+            [{ transform: 'translateY(-60%)', opacity: 0 }, { transform: 'none', opacity: 1 }],
+            { duration: 320, easing: EASE }
+          );
+        }
+      }
+      $('#no-results').classList.toggle('hidden', count !== 0);
+    }
+
+    function resetFilters() {
+      $('#achievement-search').value = '';
+      currentSearch = '';
+      currentStat = null;
+      $$('.tally-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      filterCategory('all', $('.category-btn'));
+    }
+
+    /* ----------------------------------------------------
+       3. MODALS
+    ----------------------------------------------------- */
+    let activeModal = null;
+    let lastFocus = null;
+
+    function openModal(modal) {
+      if (activeModal === modal) return;
+      lastFocus = document.activeElement;
+      activeModal = modal;
+      modal.classList.remove('hidden');
+      void modal.offsetWidth;
+      modal.classList.add('is-open');
+      document.documentElement.classList.add('modal-lock');
+      const first = $('button', modal);
+      if (first) first.focus({ preventScroll: true });
+      history.pushState({ modal: true }, '');
+    }
+
+    function closeModal(modal) {
+      if (!modal.classList.contains('is-open')) return;
+      modal.classList.remove('is-open');
+      document.documentElement.classList.remove('modal-lock');
+      activeModal = null;
+      setTimeout(() => {
+        if (!modal.classList.contains('is-open')) modal.classList.add('hidden');
+      }, 260);
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+      // Opening pushed a history entry so the system back button closes the modal.
+      // Closed any other way, that entry has to be popped or back would do nothing once.
+      if (history.state && history.state.modal) history.back();
+      else flushAfterClose();
+    }
+
+    // Anything that scrolls or opens another modal right after a close must wait for the pop above.
+    let afterClose = null;
+    function flushAfterClose() {
+      const fn = afterClose;
+      afterClose = null;
+      if (fn) requestAnimationFrame(fn);
+    }
+
+    function openCertificateModal(key) {
+      const item = certDatabase[key] || certDatabase['cert-tyo'];
+      const modal = $('#cert-modal');
+      const ach = achievements.find(a => a.key === key);
+      const photo = ach && galleryDatabase[ach.photo];
+
+      $('#modal-content').innerHTML = `
+        ${photo ? `
+        <button type="button" onclick="viewAchievementPhoto(${ach.photo})" class="group relative block w-full aspect-[16/7] rounded-xl overflow-hidden bg-slate-100 mb-4 text-left">
+          <img src="${photo.img}" alt="${photo.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <span class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent"></span>
+          <span class="absolute left-3 right-3 bottom-3 flex items-end justify-between gap-3 text-white">
+            <span class="text-xs font-semibold leading-snug">${photo.title}</span>
+            <span class="shrink-0 inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/95 text-slate-900 text-[11px] font-bold"><i data-lucide="image" class="w-3.5 h-3.5"></i>Lihat Foto</span>
+          </span>
+        </button>` : ''}
+        <div class="cert-frame bg-white p-6 sm:p-8 text-center space-y-4">
+          <div class="cert-seal w-12 h-12 mx-auto rounded-full bg-slate-900 text-white flex items-center justify-center">
+            <i data-lucide="award" class="w-6 h-6 text-amber-400"></i>
+          </div>
+          <div style="--n:0">
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-slate-500">Salinan Dokumen Piagam Resmi</span>
+            <h3 id="cert-modal-title" class="font-bold text-lg sm:text-xl text-slate-900 mt-1">${item.title}</h3>
+            <p class="text-xs text-royal-700 font-semibold mt-0.5">${item.org}</p>
+          </div>
+          <div style="--n:1" class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-700 leading-relaxed max-w-lg mx-auto">
+            ${item.desc}
+          </div>
+          <div style="--n:2" class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left border-t border-slate-200 text-xs">
+            <div>
+              <span class="block text-[10px] text-slate-500">Nomor Registrasi:</span>
+              <span class="font-mono font-bold text-slate-900 break-all">${item.number}</span>
+            </div>
+            <div>
+              <span class="block text-[10px] text-slate-500">Tanggal Pengesahan:</span>
+              <span class="font-medium text-slate-900">${item.date}</span>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <span class="block text-[10px] text-slate-500">Predikat:</span>
+              <span class="font-bold text-emerald-800">${item.predikat}</span>
+            </div>
+          </div>
+          <div style="--n:3" class="flex flex-wrap gap-1.5 justify-center pt-1">
+            ${item.tags.map(t => `<span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] text-slate-700 border border-slate-200">${t}</span>`).join('')}
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>Arsip fisik tersimpan rapi dan dapat ditunjukkan bila diperlukan.</span>
+          </span>
+          <span class="w-full sm:w-auto flex flex-col sm:flex-row gap-2 shrink-0">
+            ${ach && ach.loc ? `<button onclick="showAchievementOnMap('${ach.loc}')" class="px-4 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold border border-slate-300 flex items-center justify-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Lihat Lokasi</button>` : ''}
+            <button onclick="closeCertificateModal()" class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold">
+              Tutup
+            </button>
+          </span>
+        </div>
+      `;
+
+      openModal(modal);
+      if (window.lucide) { lucide.createIcons(); }
+
+      // Confetti is reserved for first-place results; runner-up certificates only get the stamp.
+      if (/juara 1|emas|gold|peringkat 1|1st place/i.test(item.title + ' ' + item.predikat)) {
+        setTimeout(() => {
+          const seal = $('.cert-seal', modal);
+          if (!seal || activeModal !== modal) return;
+          const r = seal.getBoundingClientRect();
+          burstConfetti(r.left + r.width / 2, r.top + r.height / 2);
+        }, 520);
+      }
+    }
+
+    function viewAchievementPhoto(index) {
+      afterClose = () => openPhotoModalByIndex(index);
+      closeCertificateModal();
+    }
+
+    function showAchievementOnMap(key) {
+      afterClose = () => goToLocation(key);
+      closeCertificateModal();
+    }
+
+    function closeCertificateModal() {
+      closeModal($('#cert-modal'));
+    }
+
+    /* ----------------------------------------------------
+       4. PETA LOKASI INTERAKTIF & VENUE KOMPETISI
+          (100% GRATIS & TANPA API KEY APAPUN)
+    ----------------------------------------------------- */
+    const mapLocations = {
+      labschool: {
+        id: 'labschool',
+        name: 'SMP Labschool Rawamangun',
+        subtitle: 'Sekolah Formal Aktif • Program Pengayaan Sains & Robotika',
+        badge: 'Sekolah Utama Kenzo',
+        status: 'Aktif (Kelas IX)',
+        color: '#1d4ed8',
+        lat: -6.193262,
+        lng: 106.883713,
+        zoom: 16,
+        address: 'Jl. Pemuda No.1, Rawamangun, Kec. Pulo Gadung, Jakarta Timur, DKI Jakarta 13220',
+        photo: 'https://images.unsplash.com/photo-1743677077216-00a458eff9e0?q=80&w=700&auto=format&fit=crop',
+        caption: 'Laboratorium Sains & Gedung Utama SMP Labschool Rawamangun',
+        navUrl: 'https://www.google.com/maps/search/?api=1&query=-6.193262,106.883713',
+        osmEmbedUrl: 'https://www.openstreetmap.org/export/embed.html?bbox=106.878713,-6.198262,106.888713,-6.188262&layer=mapnik&marker=-6.193262,106.883713'
+      },
+      alazhar: {
+        id: 'alazhar',
+        name: 'SD Islam Al-Azhar 13 Rawamangun',
+        subtitle: 'Almamater Sekolah Dasar (2017 - 2023) • Valedictorian',
+        badge: 'Almamater SD Terbaik',
+        status: 'Lulusan Terbaik',
+        color: '#0f172a',
+        lat: -6.195300,
+        lng: 106.887200,
+        zoom: 16,
+        address: 'Jl. Sunan Giri No.1, Rawamangun, Kec. Pulo Gadung, Jakarta Timur, DKI Jakarta 13220',
+        photo: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=700&auto=format&fit=crop',
+        caption: 'Kompleks Pendidikan Islam Al-Azhar Rawamangun',
+        navUrl: 'https://www.google.com/maps/search/?api=1&query=-6.195300,106.887200',
+        osmEmbedUrl: 'https://www.openstreetmap.org/export/embed.html?bbox=106.882200,-6.200300,106.892200,-6.190300&layer=mapnik&marker=-6.195300,106.887200'
+      },
+      kpm: {
+        id: 'kpm',
+        name: 'Klinik Pendidikan MIPA & Sentra Robotika WRO',
+        subtitle: 'Pusat Pembinaan Penalaran Khusus & Pengujian Sensor C++',
+        badge: 'Pusat Pembinaan Khusus',
+        status: 'Program Intensif',
+        color: '#d97706',
+        lat: -6.597147,
+        lng: 106.799564,
+        zoom: 15,
+        address: 'Sentra Pelatihan MIPA & Workshop Robotika Mikrobot, Jabodetabek',
+        photo: 'https://images.unsplash.com/photo-1562758778-e5638b5b6607?q=80&w=700&auto=format&fit=crop',
+        caption: 'Arena Uji Lintasan Robot Otonom & Kalibrasi',
+        navUrl: 'https://www.google.com/maps/search/?api=1&query=-6.597147,106.799564',
+        osmEmbedUrl: 'https://www.openstreetmap.org/export/embed.html?bbox=106.794564,-6.602147,106.804564,-6.592147&layer=mapnik&marker=-6.597147,106.799564'
+      },
+      tokyo: {
+        id: 'tokyo',
+        name: 'Tokyo Institute of Technology (Tokyo Tech)',
+        subtitle: 'Meguro, Tokyo, Jepang • Podium Emas Autonomous Rover 2025',
+        badge: 'Podium Internasional',
+        status: 'Juara 1 Emas',
+        color: '#dc2626',
+        lat: 35.6046,
+        lng: 139.6841,
+        zoom: 14,
+        address: '2-12-1 Ookayama, Meguro City, Tokyo 152-8550, Jepang',
+        photo: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=700&auto=format&fit=crop',
+        caption: 'Kampus Utama Tokyo Tech & Arena STEM Cup',
+        navUrl: 'https://www.google.com/maps/search/?api=1&query=35.6046,139.6841',
+        osmEmbedUrl: 'https://www.openstreetmap.org/export/embed.html?bbox=139.6791,35.5996,139.6891,35.6096&layer=mapnik&marker=35.6046,139.6841'
+      },
+      singapore: {
+        id: 'singapore',
+        name: 'Suntec Convention Centre (SIMCC)',
+        subtitle: 'Suntec City, Singapura • Penganugerahan SASMO Gold Award 2024',
+        badge: 'Podium Asia Pasifik',
+        status: 'Gold Award',
+        color: '#0284c7',
+        lat: 1.2931,
+        lng: 103.8578,
+        zoom: 14,
+        address: '1 Raffles Blvd, Suntec City, Singapura 039593',
+        photo: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=700&auto=format&fit=crop',
+        caption: 'Auditorium Suntec Singapura & Panggung Seremoni',
+        navUrl: 'https://www.google.com/maps/search/?api=1&query=1.2931,103.8578',
+        osmEmbedUrl: 'https://www.openstreetmap.org/export/embed.html?bbox=103.8528,1.2881,103.8628,1.2981&layer=mapnik&marker=1.2931,103.8578'
+      }
+    };
+
+    let schoolMap = null;
+    let currentMapKey = 'labschool';
+    let mapMarkers = {};
+
+    function renderOsmEmbed(key) {
+      const loc = mapLocations[key];
+      const mapContainer = document.getElementById('school-map');
+      if (!mapContainer || !loc) return;
+      mapContainer.innerHTML = `
+        <iframe src="${loc.osmEmbedUrl}" width="100%" height="100%" style="border:0;" loading="lazy" title="Peta Lokasi ${loc.name}"></iframe>
+      `;
+    }
+
+    function initSchoolMap() {
+      const mapContainer = document.getElementById('school-map');
+      if (!mapContainer) return;
+
+      // Dual-Engine: If Leaflet library is not available, automatically render OpenStreetMap embed iframe
+      if (typeof L === 'undefined') {
+        renderOsmEmbed('labschool');
+        return;
+      }
+
+      try {
+        // Initialize Leaflet map (100% Free, NO API Key Needed)
+        schoolMap = L.map('school-map', {
+          center: [-6.193262, 106.883713],
+          zoom: 15,
+          scrollWheelZoom: false,
+          zoomControl: true
+        });
+
+        // JANGAN pakai tile.openstreetmap.org atau CARTO: tanpa header Referer (halaman dibuka
+        // lewat file://) yang pertama membalas 403, yang kedua gambar "API KEY REQUIRED".
+        const tileLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener noreferrer">Esri</a> &mdash; Esri, HERE, Garmin, OpenStreetMap contributors',
+          maxZoom: 18
+        });
+
+        tileLayer.once('tileerror', function() {
+          schoolMap.removeLayer(tileLayer);
+          L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',
+            maxZoom: 18
+          }).addTo(schoolMap);
+        });
+
+        tileLayer.addTo(schoolMap);
+
+        // Add pins for all locations
+        Object.keys(mapLocations).forEach(key => {
+          const loc = mapLocations[key];
+          const icon = L.divIcon({
+            className: 'custom-leaflet-marker',
+            html: `
+              <div class="pin-marker" style="--pin-color: ${loc.color};">
+                <div class="pin-dot"></div>
+                <div class="pin-pulse"></div>
+              </div>
+            `,
+            iconSize: [28, 28],
+            iconAnchor: [14, 14]
+          });
+
+          const marker = L.marker([loc.lat, loc.lng], { icon: icon }).addTo(schoolMap);
+          marker.bindPopup(`
+            <div class="p-1 space-y-1.5 font-sans" style="min-width: 200px;">
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold text-white" style="background-color: ${loc.color};">${loc.badge}</span>
+              <h5 class="text-xs font-bold text-slate-900 leading-snug">${loc.name}</h5>
+              <p class="text-[11px] text-slate-600 line-clamp-2">${loc.address}</p>
+              <div class="pt-1 flex items-center justify-between border-t border-slate-100">
+                <button onclick="selectLocation('${key}')" class="tap text-[11px] font-bold text-royal-700 hover:underline">Lihat Rincian →</button>
+                <a href="${loc.navUrl}" target="_blank" rel="noopener noreferrer" class="tap text-[11px] text-slate-500 hover:text-slate-900">Google Maps ↗</a>
+              </div>
+            </div>
+          `);
+          marker.on('click', () => selectLocation(key));
+          mapMarkers[key] = marker;
+        });
+
+        // Set initial view
+        selectLocation('labschool', false);
+
+        // Resize fix on layout shift
+        setTimeout(() => {
+          if (schoolMap) schoolMap.invalidateSize();
+        }, 300);
+      } catch (err) {
+        console.warn('Leaflet error, using OpenStreetMap embed fallback:', err);
+        renderOsmEmbed('labschool');
+      }
+    }
+
+    function selectLocation(key, fly = true) {
+      const loc = mapLocations[key];
+      if (!loc) return;
+      currentMapKey = key;
+
+      // Update Left Education Cards Active State
+      $$('.edu-card').forEach(card => {
+        const isTarget = card.id === `edu-card-${key}`;
+        card.classList.toggle('border-royal-600', isTarget);
+        card.classList.toggle('bg-royal-50/20', isTarget);
+        card.classList.toggle('border-transparent', !isTarget);
+        card.classList.toggle('bg-white', !isTarget);
+
+        const statusEl = card.querySelector('.edu-card-status');
+        if (statusEl) {
+          statusEl.innerHTML = isTarget
+            ? '<i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i><span>Ditampilkan di Peta</span>'
+            : '<i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span>Lihat di Peta</span>';
+          statusEl.classList.toggle('text-royal-700', isTarget);
+          statusEl.classList.toggle('font-bold', isTarget);
+          statusEl.classList.toggle('text-slate-500', !isTarget);
+          statusEl.classList.toggle('font-medium', !isTarget);
+        }
+      });
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+
+      // Update Floating Label
+      const floatLabel = $('#map-floating-label');
+      if (floatLabel) floatLabel.textContent = loc.name;
+
+      // Update Right Detail Card
+      const locName = $('#loc-name');
+      const locSubtitle = $('#loc-subtitle');
+      const locBadge = $('#loc-badge');
+      const locStatus = $('#loc-status');
+      const locPhoto = $('#loc-photo');
+      const locCaption = $('#loc-photo-caption');
+      const locAddress = $('#loc-address');
+      const locNav = $('#loc-nav-link');
+
+      if (locName) locName.textContent = loc.name;
+      if (locSubtitle) locSubtitle.textContent = loc.subtitle;
+      if (locBadge) locBadge.textContent = loc.badge;
+      if (locStatus) locStatus.textContent = loc.status;
+      if (locPhoto) {
+        locPhoto.src = loc.photo;
+        locPhoto.alt = loc.name;
+      }
+      if (locCaption) locCaption.textContent = loc.caption;
+      if (locAddress) locAddress.textContent = loc.address;
+      if (locNav) locNav.href = loc.navUrl;
+
+      // Fly map smoothly to location
+      if (schoolMap) {
+        if (fly) {
+          schoolMap.flyTo([loc.lat, loc.lng], loc.zoom, { duration: 1.1 });
+        } else {
+          schoolMap.setView([loc.lat, loc.lng], loc.zoom);
+        }
+      } else {
+        renderOsmEmbed(key);
+      }
+    }
+
+    function resetMapView() {
+      selectLocation('labschool');
+    }
+
+    function jumpToMap(key) {
+      const sec = document.getElementById('lokasi');
+      if (sec) {
+        sec.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          selectLocation(key);
+        }, 400);
+      }
+    }
+
+    function copyEmailAddress() {
+      navigator.clipboard.writeText('prestasi.kenzo@gmail.com').then(() => {
+        showToast('Email prestasi.kenzo@gmail.com berhasil disalin ke clipboard!');
+      }).catch(() => {
+        showToast('Email: prestasi.kenzo@gmail.com');
+      });
+    }
+
+    function selectContactTopic(topic, btn) {
+      $$('.topic-chip').forEach(b => {
+        const isTarget = b === btn;
+        b.classList.toggle('active', isTarget);
+        b.classList.toggle('text-royal-700', isTarget);
+        b.classList.toggle('border-royal-300', isTarget);
+        b.classList.toggle('shadow-sm', isTarget);
+        b.classList.toggle('text-slate-600', !isTarget);
+        b.classList.toggle('border-slate-200', !isTarget);
+      });
+      const textarea = $('#wa-msg');
+      if (!textarea) return;
+      const templates = {
+        lomba: 'Halo Bapak/Ibu Kenzo, kami dari pihak panitia bermaksud mengundang Kenzo untuk berpartisipasi dalam ajang...',
+        riset: 'Halo Bapak/Ibu Kenzo, kami tertarik berdiskusi mengenai proyek riset dan teknologi robotika Kenzo terkait...',
+        beasiswa: 'Halo Bapak/Ibu Kenzo, kami ingin menyampaikan informasi mengenai program beasiswa / pembinaan untuk Kenzo...',
+        tanya: 'Halo Bapak/Ibu Kenzo, kami ingin bersilaturahmi dan menanyakan informasi terkait portofolio Kenzo mengenai...'
+      };
+      textarea.value = templates[topic] || templates.lomba;
+      textarea.focus();
+    }
+
+    /* ----------------------------------------------------
+       5. GALERI FOTO KEGIATAN & ALBUM 2.0
+    ----------------------------------------------------- */
+    const galleryDatabase = [
+      {
+        id: 'gal-tokyo',
+        category: 'podium',
+        badge: 'Podium Tokyo Tech 2025',
+        meta: 'Januari 2025 • Tokyo, Jepang',
+        title: 'Penganugerahan Juara 1 Robotika di Tokyo, Jepang',
+        desc: 'Momen penerimaan piala emas pada ajang International Youth STEM Cup 2025 di Tokyo Institute of Technology. Kenzo memimpin tim autonomous rescue rover Indonesia menuntaskan rintangan simulasi bencana tanpa penalti waktu.',
+        img: 'https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-lab',
+        category: 'robotik',
+        badge: 'Lab Robotika C++',
+        meta: 'Desember 2024 • Sentra Robotika Jakarta',
+        title: 'Pengujian Modul Sensor Otonom & Kalibrasi',
+        desc: 'Sesi kalibrasi sensor inframerah dan penyesuaian rute pathfinding di laboratorium robotika. Menguji algoritma penghindaran rintangan dinamis berbasis mikrokontroler ESP32.',
+        img: 'https://images.unsplash.com/photo-1562758778-e5638b5b6607?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-brin',
+        category: 'sains',
+        badge: 'Sidang Riset BRIN 2024',
+        meta: 'Oktober 2024 • Gedung BJ Habibie BRIN',
+        title: 'Presentasi Sidang Ilmiah EcoSort AI di Hadapan Dewan BRIN',
+        desc: 'Penyampaian gagasan pemilah sampah otomatis EcoSort AI di hadapan dewan penilai riset BRIN & IYSA, mempertahankan tingkat akurasi klasifikasi citra 96.2%.',
+        img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-catur',
+        category: 'sekolah',
+        badge: 'Kejurda Catur DKI',
+        meta: 'Juli 2023 • Percasi DKI Jakarta',
+        title: 'Final Kejuaraan Daerah Catur Junior KU-12',
+        desc: 'Pertandingan catur cepat G-15 menit penentu gelar juara tanpa kekalahan KU-12. Mengamankan skor 6.5 dari 7 babak sistem Swiss resmi provinsi.',
+        img: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-osn',
+        category: 'podium',
+        badge: 'Medali Perak OSN IPA',
+        meta: 'September 2024 • Puspresnas Kemendikbudristek',
+        title: 'Penganugerahan Medali Perak OSN SMP Tingkat Nasional',
+        desc: 'Penerimaan medali perak olimpiade sains nasional bidang IPA mewakili kontingen DKI Jakarta setelah menyelesaikan uji teori dan eksperimen praktikum.',
+        img: 'https://images.unsplash.com/photo-1706374503210-5f200b0b315b?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-wro',
+        category: 'robotik',
+        badge: 'WRO RoboMission',
+        meta: 'Agustus 2023 • Arena Seleksi WRO Nasional',
+        title: 'Perakitan Perangkat Robotik World Robot Olympiad',
+        desc: 'Pengujian motor penggerak roda dan kestabilan sasis robot Spike Prime pada arena tugas logistik pelabuhan otonom, berhasil menuntaskan misi dalam 48 detik.',
+        img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-kpm',
+        category: 'sains',
+        badge: 'Klinik MIPA & SASMO',
+        meta: 'Mei 2024 • KPM Jabodetabek',
+        title: 'Latihan Intensif Penalaran Olimpiade Sains',
+        desc: 'Simulasi pengerjaan soal aljabar non-rutin dan persiapan olimpiade matematika internasional SASMO & IKMC Paris di Klinik Pendidikan MIPA.',
+        img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-labschool',
+        category: 'sekolah',
+        badge: 'SMP Labschool Rawamangun',
+        meta: 'November 2024 • Kampus Labschool Rawamangun',
+        title: 'Edukasi & Pameran Sains Proyek Robotika Sekolah',
+        desc: 'Edukasi dan demonstrasi kerja sensor rover kepada adik-adik kelas serta guru pembimbing di selasar laboratorium sains SMP Labschool Rawamangun.',
+        img: 'https://images.unsplash.com/photo-1743677077216-00a458eff9e0?q=80&w=1000&auto=format&fit=crop'
+      },
+      {
+        id: 'gal-singapore',
+        category: 'podium',
+        badge: 'SASMO Gold Singapura',
+        meta: 'Juni 2024 • Suntec Convention Centre, Singapura',
+        title: 'Seremoni Penghargaan SASMO Gold Award Singapura',
+        desc: 'Menerima penghargaan SASMO Gold Award di panggung internasional Suntec Singapura bersama perwakilan pelajar berbakat se-Asia Pasifik.',
+        img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1000&auto=format&fit=crop'
+      }
+    ];
+
+    let currentGalleryCategory = 'all';
+    let currentPhotoIdx = 0;
+
+    function switchShowcaseTab(tab) {
+      const pPrestasi = $('#panel-prestasi');
+      const pGaleri = $('#panel-galeri');
+      const btnP = $('#switch-tab-prestasi');
+      const btnG = $('#switch-tab-galeri');
+
+      [btnP, btnG].forEach(btn => {
+        if (!btn) return;
+        const isTarget = btn.id === `switch-tab-${tab}`;
+        btn.classList.toggle('active', isTarget);
+        btn.classList.toggle('bg-slate-900', isTarget);
+        btn.classList.toggle('text-white', isTarget);
+        btn.classList.toggle('shadow-sm', isTarget);
+        btn.classList.toggle('font-bold', isTarget);
+        btn.classList.toggle('font-semibold', !isTarget);
+        btn.classList.toggle('text-slate-600', !isTarget);
+        btn.classList.toggle('hover:text-slate-900', !isTarget);
+        btn.setAttribute('aria-pressed', isTarget);
+      });
+
+      if (tab === 'prestasi') {
+        if (pPrestasi) pPrestasi.classList.remove('hidden');
+        if (pGaleri) pGaleri.classList.add('hidden');
+      } else if (tab === 'galeri') {
+        if (pPrestasi) pPrestasi.classList.add('hidden');
+        if (pGaleri) pGaleri.classList.remove('hidden');
+      }
+
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+      showcaseView = tab;
+      movePill($('#tab-pill'), $('.category-btn.active'));
+      syncTabbar();
+    }
+
+    // Hash navigation listener for #galeri & #prestasi
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash === '#galeri') {
+        switchShowcaseTab('galeri');
+      } else if (window.location.hash === '#prestasi') {
+        switchShowcaseTab('prestasi');
+      }
+    });
+    if (window.location.hash === '#galeri') {
+      setTimeout(() => switchShowcaseTab('galeri'), 150);
+    }
+
+    function filterGalleryCategory(cat, btn) {
+      currentGalleryCategory = cat;
+      $$('.gal-filter-btn').forEach(b => {
+        b.classList.toggle('active', b === btn);
+        b.classList.toggle('bg-slate-900', b === btn);
+        b.classList.toggle('text-white', b === btn);
+        b.classList.toggle('text-slate-600', b !== btn);
+      });
+
+      const cards = $$('.gallery-card');
+      cards.forEach(card => {
+        const itemCat = card.dataset.category;
+        const matches = cat === 'all' || itemCat === cat;
+        card.style.display = matches ? '' : 'none';
+        if (matches && motionOK) {
+          card.animate([{ opacity: 0, transform: 'scale(0.96)' }, { opacity: 1, transform: 'none' }], {
+            duration: 320,
+            easing: EASE
+          });
+        }
+      });
+    }
+
+    function openPhotoModalByIndex(index) {
+      if (index < 0 || index >= galleryDatabase.length) return;
+      currentPhotoIdx = index;
+      const item = galleryDatabase[index];
+      const modal = $('#photo-modal');
+      const img = $('#photo-modal-img');
+      const wasOpen = modal.classList.contains('is-open');
+
+      img.dataset.want = item.img;
+      img.src = item.img;
+      img.alt = item.title;
+
+      $('#photo-modal-title').textContent = item.title;
+      $('#photo-modal-desc').textContent = item.desc;
+      $('#photo-modal-badge').textContent = item.badge;
+      $('#photo-modal-meta').textContent = item.meta;
+      $('#photo-counter').textContent = `${index + 1} / ${galleryDatabase.length}`;
+
+      // Populate Thumbnail Strip
+      const strip = $('#photo-thumb-strip');
+      if (strip) {
+        strip.innerHTML = galleryDatabase.map((it, i) => `
+          <button type="button" onclick="openPhotoModalByIndex(${i})" class="thumb-btn w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-slate-200 ${i === index ? 'is-active ring-2 ring-royal-600' : ''}" title="${it.title}">
+            <img src="${it.img}" alt="${it.title}" class="w-full h-full object-cover">
+          </button>
+        `).join('');
+      }
+
+      if (wasOpen) {
+        if (motionOK) {
+          img.animate(
+            [{ opacity: 0, transform: `translateX(${photoDir * 28}px)` }, { opacity: 1, transform: 'none' }],
+            { duration: 340, easing: EASE }
+          );
+        }
+      } else {
+        openModal(modal);
+      }
+    }
+
+    function stepPhoto(dir) {
+      photoDir = dir;
+      const nextIdx = (currentPhotoIdx + dir + galleryDatabase.length) % galleryDatabase.length;
+      openPhotoModalByIndex(nextIdx);
+    }
+
+    function closePhotoModal() {
+      closeModal($('#photo-modal'));
+    }
+
+    function shareActivePhoto() {
+      const item = galleryDatabase[currentPhotoIdx];
+      if (!item) return;
+      const text = `${item.title} (${item.meta}) - Portofolio Kenzo Al-Fatih`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Keterangan dokumentasi kegiatan berhasil disalin ke clipboard!');
+      }).catch(() => {
+        showToast('Tautan foto disalin.');
+      });
+    }
+
+    /* ----------------------------------------------------
+       6. CV DOWNLOAD & WHATSAPP
+    ----------------------------------------------------- */
+    function downloadPortfolioModal() {
+      openModal($('#download-modal'));
+    }
+
+    function closeDownloadModal() {
+      closeModal($('#download-modal'));
+    }
+
+    function triggerSimulatedDownload() {
+      closeDownloadModal();
+      showToast('Dokumen portofolio PDF resmi siap diunduh. Untuk versi berkas fisik bertanda tangan, silakan hubungi narahubung orang tua.');
+    }
+
+    function handleContact(e) {
+      e.preventDefault();
+      const name = document.getElementById('wa-name').value;
+      const msg = document.getElementById('wa-msg').value;
+      const text = encodeURIComponent(`Halo Orang Tua Kenzo Al-Fatih,\nSaya: ${name}\nKeperluan: ${msg}\n(Terkirim dari Portofolio Web Kenzo)`);
+      window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+      showToast('WhatsApp dibuka di tab baru. Pesan Anda sudah terisi, tinggal tekan kirim.');
+    }
+
+    let toastTimer;
+    function showToast(message) {
+      const toast = $('#toast');
+      toast.textContent = message;
+      toast.classList.add('is-on');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('is-on'), 5200);
+    }
+
+    function burstConfetti(x, y) {
+      if (!motionOK) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const canvas = document.createElement('canvas');
+      canvas.className = 'confetti';
+      canvas.width = innerWidth * dpr;
+      canvas.height = innerHeight * dpr;
+      document.body.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      const colors = ['#d97706', '#fbbf24', '#1e40af', '#0f172a'];
+      const parts = Array.from({ length: 70 }, (_, i) => {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 4 + Math.random() * 9;
+        return {
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 5,
+          w: 4 + Math.random() * 5,
+          h: 8 + Math.random() * 6,
+          rot: Math.random() * 6,
+          spin: (Math.random() - 0.5) * 0.4,
+          color: colors[i % colors.length]
+        };
+      });
+
+      const start = performance.now();
+      (function frame(now) {
+        const t = (now - start) / 1800;
+        if (t >= 1) { canvas.remove(); return; }
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        ctx.globalAlpha = t < 0.6 ? 1 : 1 - (t - 0.6) / 0.4;
+        parts.forEach(p => {
+          p.vx *= 0.985;
+          p.vy = p.vy * 0.985 + 0.32;
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.spin;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          ctx.restore();
+        });
+        requestAnimationFrame(frame);
+      })(start);
+    }
+
+    /* ----------------------------------------------------
+       6. MOTION & MICRO-INTERACTIONS
+    ----------------------------------------------------- */
+    const REVEALS = {
+      up: [{ opacity: 0, transform: 'translateY(22px)' }, { opacity: 1, transform: 'none' }],
+      left: [{ opacity: 0, transform: 'translateX(-28px)' }, { opacity: 1, transform: 'none' }],
+      scale: [{ opacity: 0, transform: 'scale(0.95)' }, { opacity: 1, transform: 'none' }],
+      wipe: [
+        { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(20px)' },
+        { clipPath: 'inset(0 0 0 0)', transform: 'none' }
+      ]
+    };
+
+    function initReveals() {
+      const items = $$('[data-reveal], [data-stagger] > *');
+      if (!motionOK) return;
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(el => el.classList.add('is-in'));
+        return;
+      }
+      const io = new IntersectionObserver(entries => {
+        let order = 0;
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          io.unobserve(el);
+          if (el.classList.contains('is-in')) return;
+          const kind = el.dataset.reveal || el.parentElement.dataset.stagger;
+          el.classList.add('is-in');
+          el.animate(REVEALS[kind] || REVEALS.up, { duration: 750, delay: order++ * 80, easing: EASE, fill: 'backwards' });
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      items.forEach(el => io.observe(el));
+    }
+
+    function initCounters() {
+      if (!motionOK || !('IntersectionObserver' in window)) return;
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          io.unobserve(el);
+          const end = Number(el.dataset.count);
+          const suffix = el.dataset.suffix || '';
+          const start = performance.now();
+          (function tick(now) {
+            const p = Math.min((now - start) / 1400, 1);
+            el.textContent = Math.round(end * (1 - Math.pow(1 - p, 4))) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          })(start);
+        });
+      }, { threshold: 0.6 });
+      $$('[data-count]').forEach(el => io.observe(el));
+    }
+
+    function initScrollEffects() {
+      const header = $('#site-header');
+      const progress = $('#scroll-progress');
+      const toTop = $('#to-top');
+      const lines = $$('.tl-line');
+
+      function update() {
+        const y = window.scrollY;
+        const max = document.documentElement.scrollHeight - innerHeight;
+        header.classList.toggle('is-scrolled', y > 24);
+        progress.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+        toTop.classList.toggle('is-on', y > 700);
+
+        const mark = innerHeight * 0.62;
+        lines.forEach(line => {
+          const r = line.getBoundingClientRect();
+          line.style.setProperty('--p', Math.max(0, Math.min(1, (mark - r.top) / r.height)));
+        });
+      }
+
+      let queued = false;
+      addEventListener('scroll', () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => { update(); queued = false; });
+      }, { passive: true });
+      addEventListener('resize', update);
+      toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: motionOK ? 'smooth' : 'auto' }));
+      update();
+    }
+
+    function initScrollSpy() {
+      const links = $$('.nav-link');
+      const pill = $('#nav-pill');
+      let current = null;
+
+      function setActive(id) {
+        current = links.find(a => a.getAttribute('href') === '#' + id) || null;
+        links.forEach(a => {
+          a.classList.toggle('is-active', a === current);
+          if (a === current) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+        if (current) movePill(pill, current);
+        else pill.style.opacity = 0;
+        currentSection = id;
+        syncTabbar();
+      }
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
+        }, { rootMargin: '-45% 0px -54% 0px' });
+        $$('section[id]').forEach(section => io.observe(section));
+      }
+
+      const realign = () => {
+        if (current) movePill(pill, current);
+        movePill($('#tab-pill'), $('.category-btn.active'));
+      };
+      addEventListener('resize', realign);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(realign);
+    }
+
+    let currentSection = 'beranda';
+    let showcaseView = 'prestasi';
+
+    function syncTabbar() {
+      const onGallery = currentSection === 'prestasi' && showcaseView === 'galeri';
+      const tab = onGallery ? 'galeri'
+        : (currentSection === 'tentang' || currentSection === 'kontak') ? 'lainnya'
+        : currentSection;
+      $$('#tabbar .tab-btn').forEach(btn => {
+        const on = btn.dataset.tab === tab;
+        btn.classList.toggle('is-active', on);
+        if (on) btn.setAttribute('aria-current', 'page');
+        else btn.removeAttribute('aria-current');
+      });
+
+      const titles = { beranda: 'Kenzo Al-Fatih', tentang: 'Profil & Karakter', pendidikan: 'Pendidikan', prestasi: 'Prestasi', kontak: 'Kontak' };
+      const title = $('#appbar-title');
+      const text = onGallery ? 'Galeri' : titles[currentSection];
+      if (!title || !text || title.textContent === text) return;
+      title.textContent = text;
+      if (motionOK) {
+        title.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 240, easing: EASE });
+      }
+    }
+
+    // Tabs switch screens instantly, like a native tab bar, instead of smooth-scrolling the whole page.
+    function goTo(id, anchor) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      if (id === 'beranda') scrollTo({ top: 0, behavior: 'instant' });
+      else (anchor || target).scrollIntoView({ behavior: 'instant', block: 'start' });
+      if (motionOK) target.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220, easing: 'ease-out' });
+      currentSection = id;
+      syncTabbar();
+    }
+
+    function initMobileNav() {
+      const sheet = $('#more-sheet');
+      const panel = $('.sheet-panel', sheet);
+
+      $('#tabbar').addEventListener('click', e => {
+        const btn = e.target.closest('[data-tab]');
+        if (!btn) return;
+        e.preventDefault();
+        const tab = btn.dataset.tab;
+        if (tab === 'lainnya') {
+          openModal(sheet);
+          panel.focus({ preventScroll: true });
+          return;
+        }
+        if (tab === 'galeri' || tab === 'prestasi') switchShowcaseTab(tab);
+        if (tab === 'galeri') goTo('prestasi', $('#panel-galeri'));
+        else goTo(tab);
+      });
+
+      sheet.addEventListener('click', e => {
+        const row = e.target.closest('.sheet-row');
+        if (!row) return;
+        if (row.dataset.go) {
+          e.preventDefault();
+          afterClose = () => goTo(row.dataset.go);
+        } else if (row.dataset.act === 'resume') {
+          afterClose = downloadPortfolioModal;
+        }
+        closeModal(sheet);
+      });
+
+      let startY = null;
+      let dragged = 0;
+      panel.addEventListener('touchstart', e => {
+        startY = e.touches[0].clientY;
+        dragged = 0;
+        panel.style.transition = 'none';
+      }, { passive: true });
+      panel.addEventListener('touchmove', e => {
+        if (startY === null) return;
+        dragged = Math.max(0, e.touches[0].clientY - startY);
+        panel.style.transform = `translateY(${dragged}px)`;
+      }, { passive: true });
+      const release = () => {
+        if (startY === null) return;
+        startY = null;
+        panel.style.transition = '';
+        panel.style.transform = '';
+        if (dragged > 70) closeModal(sheet);
+      };
+      panel.addEventListener('touchend', release);
+      panel.addEventListener('touchcancel', release);
+
+      const root = document.documentElement;
+      document.addEventListener('focusin', e => root.classList.toggle('kb-open', e.target.matches('input, textarea')));
+      document.addEventListener('focusout', () => root.classList.remove('kb-open'));
+    }
+
+    function initPointerEffects() {
+      if (!motionOK || !finePointer) return;
+
+      const hero = $('#beranda');
+      const dots = $('.hero-dots');
+      hero.addEventListener('pointermove', e => {
+        const r = hero.getBoundingClientRect();
+        dots.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        dots.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        dots.classList.add('is-on');
+      });
+      hero.addEventListener('pointerleave', () => dots.classList.remove('is-on'));
+
+      const card = $('#hero-card');
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.classList.add('is-tilting');
+        card.style.transform = `rotateY(${px * 8}deg) rotateX(${-py * 8}deg)`;
+        card.style.setProperty('--gx', (px + 0.5) * 100 + '%');
+        card.style.setProperty('--gy', (py + 0.5) * 100 + '%');
+      });
+      card.addEventListener('pointerleave', () => {
+        card.classList.remove('is-tilting');
+        card.style.transform = '';
+      });
+
+      $$('.achievement-card, #tentang .clean-card').forEach(el => {
+        el.classList.add('spot');
+        el.addEventListener('pointermove', e => {
+          const r = el.getBoundingClientRect();
+          el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+      });
+
+      $$('[data-magnetic]').forEach(el => {
+        el.addEventListener('pointermove', e => {
+          const r = el.getBoundingClientRect();
+          const dx = (e.clientX - r.left - r.width / 2) * 0.18;
+          const dy = (e.clientY - r.top - r.height / 2) * 0.3;
+          el.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+        el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+      });
+    }
+
+    function initImages() {
+      $$('.bg-slate-100 > img[src^="http"]').forEach(img => {
+        img.classList.add('lazy-fade');
+        if (img.complete) return;
+        const wrap = img.parentElement;
+        const done = () => {
+          img.classList.remove('is-loading');
+          wrap.classList.remove('shimmer');
+        };
+        img.classList.add('is-loading');
+        wrap.classList.add('shimmer');
+        img.addEventListener('load', done, { once: true });
+        img.addEventListener('error', done, { once: true });
+      });
+    }
+
+    function initGallery() {
+      galleryItems = $$('#panel-galeri .gallery-card');
+      galleryItems.forEach(el => {
+        el.classList.add('gallery-item');
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.addEventListener('keydown', e => {
+          if (e.key !== 'Enter' && e.key !== ' ') return;
+          e.preventDefault();
+          el.click();
+        });
+      });
+    }
+
+    function initModals() {
+      $$('.modal').forEach(modal => {
+        modal.addEventListener('mousedown', e => { if (e.target === modal) closeModal(modal); });
+      });
+
+      window.addEventListener('popstate', () => {
+        if (activeModal) closeModal(activeModal);
+        else flushAfterClose();
+      });
+
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          if (activeModal) closeModal(activeModal);
+          return;
+        }
+        if (!activeModal) return;
+
+        if (activeModal.id === 'photo-modal' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+          stepPhoto(e.key === 'ArrowRight' ? 1 : -1);
+          return;
+        }
+        if (e.key === 'Tab') {
+          const focusables = $$('button, [href], input, textarea', activeModal);
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          if (!activeModal.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+          else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    }
+
+    renderAchievements();
+    movePill($('#tab-pill'), $('.category-btn.active'));
+    initGallery();
+    initModals();
+    initImages();
+    initScrollEffects();
+    initScrollSpy();
+    initMobileNav();
+    initPointerEffects();
+    initCounters();
+    initReveals();
+    initSchoolMap();
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+
+</body>
+</html>
